@@ -1,0 +1,58 @@
+stages:
+  - build
+  - push
+  - deploy
+
+before_script:
+  - if [ "$CI_COMMIT_REF_NAME" == "develop" ]; then
+      STAGE_VAR="dev"
+      SSH_PRIVATE_KEY=${SSH_PRIVATE_KEY_DEV};
+      SERVER_IP=${SERVER_IP_DEV};
+      SSH_USER=${SSH_USER_DEV};
+      SSH_PORT=${SSH_PORT_DEV};
+      APP_ENV=${ENV_DEV};
+    elif [ "$CI_COMMIT_REF_NAME" == "production" ]; then
+      STAGE_VAR="prod"
+      SSH_PRIVATE_KEY=${SSH_PRIVATE_KEY_PROD};
+      SERVER_IP=${SERVER_IP_PROD};
+      SSH_USER=${SSH_USER_PROD};
+      SSH_PORT=${SSH_PORT_PROD};
+      APP_ENV=${ENV_PROD};
+    fi
+
+  - IMAGE_TAG_SHA=${HARBOR_REGISTRY_URL}/${HARBOR_REGISTRY_PROJECT}/${STAGE_VAR}:${CI_COMMIT_SHORT_SHA}
+  - IMAGE_TAG_LATEST=${HARBOR_REGISTRY_URL}/${HARBOR_REGISTRY_PROJECT}/${STAGE_VAR}:latest
+  - DOCKER_COMPOSE_FILE_PATH=/var/www/frontend-nextjs-${STAGE_VAR}.yml
+
+build:
+  stage: build
+  only:
+    - develop
+    - production
+  script:
+    - docker build -t ${IMAGE_TAG_SHA} --build-arg APP_ENV="${APP_ENV}" -f ./Dockerfile .
+
+push:
+  stage: push
+  only:
+    - develop
+    - production
+  script:
+    - echo "${HARBOR_REGISTRY_PASSWORD}" | docker login -u "${HARBOR_REGISTRY_USER}" --password-stdin ${HARBOR_REGISTRY_URL}
+    - docker push ${IMAGE_TAG_SHA}
+    - docker image rm ${IMAGE_TAG_SHA}
+
+deploy:
+  stage: deploy
+  only:
+    - develop
+    - production
+  script:
+    - chmod og= ${SSH_PRIVATE_KEY}
+    - ssh -i ${SSH_PRIVATE_KEY} -o StrictHostKeyChecking=no ${SSH_USER}@${SERVER_IP} -p ${SSH_PORT} "docker login -u '${HARBOR_REGISTRY_USER}' -p '${HARBOR_REGISTRY_PASSWORD}' ${HARBOR_REGISTRY_URL}"
+    - ssh -i ${SSH_PRIVATE_KEY} -o StrictHostKeyChecking=no ${SSH_USER}@${SERVER_IP} -p ${SSH_PORT} "docker pull ${IMAGE_TAG_SHA}"
+    - ssh -i ${SSH_PRIVATE_KEY} -o StrictHostKeyChecking=no ${SSH_USER}@${SERVER_IP} -p ${SSH_PORT} "docker tag ${IMAGE_TAG_SHA} ${IMAGE_TAG_LATEST}"
+    - ssh -i ${SSH_PRIVATE_KEY} -o StrictHostKeyChecking=no ${SSH_USER}@${SERVER_IP} -p ${SSH_PORT} "docker compose -f ${DOCKER_COMPOSE_FILE_PATH} down"
+    - ssh -i ${SSH_PRIVATE_KEY} -o StrictHostKeyChecking=no ${SSH_USER}@${SERVER_IP} -p ${SSH_PORT} "docker compose -f ${DOCKER_COMPOSE_FILE_PATH} up -d"
+    - ssh -i ${SSH_PRIVATE_KEY} -o StrictHostKeyChecking=no ${SSH_USER}@${SERVER_IP} -p ${SSH_PORT} "docker images -f 'dangling=true' -q | xargs --no-run-if-empty docker rmi -f"
+    - ssh -i ${SSH_PRIVATE_KEY} -o StrictHostKeyChecking=no ${SSH_USER}@${SERVER_IP} -p ${SSH_PORT} "docker image rm ${IMAGE_TAG_SHA}"

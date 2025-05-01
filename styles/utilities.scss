@@ -1,0 +1,48 @@
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-center-baseline {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+.flex-space {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.arrow-bg {
+  border-radius: 50% !important;
+  background: #f2f4f8 !important;
+  border-radius: 50% !important;
+  width: 3.2rem !important;
+  height: 3.2rem !important;
+}
+.prev-arrow {
+  left: 90%;
+  top: 12rem;
+}
+
+.next-arrow {
+  right: 90%;
+  top: 12rem;
+}
+
+.hover-on-Item {
+  transition: all 0.5s ease;
+  border-radius: 1rem;
+  &:hover {
+    box-shadow: 1px 1px 23px 0px rgba(0, 0, 0, 0.2);
+  }
+}
