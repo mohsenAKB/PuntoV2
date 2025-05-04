@@ -1,8 +1,6 @@
-import { testAction } from "@/actions/testActions";
+import { startupAction } from "@/actions/startup";
 
 export default async function Home() {
-  const data = await testAction();
-  console.log(data);
 
   return <div>ii</div>;
 }

@@ -1,15 +1,18 @@
-'use server';
+import { IList } from "@/@types/list";
+import { IStartupRes } from "@/@types/response/startupRes";
+import { API } from "@/constant/api";
+import { authServerRequest } from "@/utils/server-request/auth-server-request";
 
-import { authServerRequest } from '@/utils/server-request/auth-server-request';
-
-export const startupAction = async (): Promise<StartupResponse | undefined> => {
+export const startupAction = async (): Promise<
+  IStartupRes | undefined
+> => {
   try {
-    const { data } = await authServerRequest<StartupResponse>({
-      method: 'GET',
-      url: API.startup,
+    const result = await authServerRequest<IList<IStartupRes>>({
+      method: "GET",
+      url: API.getInitializeConfigs,
     });
 
-    return data;
+    return result?.data;
   } catch (error) {
     return undefined;
   }

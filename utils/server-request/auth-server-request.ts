@@ -1,7 +1,9 @@
-import { AxiosRequestConfig } from 'axios';
-import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
-import { serverRequest } from './server-request';
-import { getCookies } from 'cookies-next';
+import { AxiosRequestConfig } from "axios";
+import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
+import { serverRequest } from "./server-request";
+import { getCookie } from "@/actions/cookie/get-cookie";
+import { CookieType } from "@/@types/cookie";
+// import { getCookies } from 'cookies-next';
 
 export interface ServerRequestResult<R = any> {
   data?: GetServerSidePropsResult<R>;
@@ -10,9 +12,8 @@ export interface ServerRequestResult<R = any> {
 
 export const authServerRequest = async <R = any, D = any>(
   config: AxiosRequestConfig<R>,
-  context: GetServerSidePropsContext
 ): Promise<R | undefined> => {
-  const { token } = getCookies({ req: context.req })
+  const  token = await getCookie(CookieType.Token);
 
   return serverRequest<R, D>({
     ...config,
