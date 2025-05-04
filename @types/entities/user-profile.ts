@@ -1,0 +1,42 @@
+import { ICompanySize } from "./company-sizes";
+import { IDegree } from "./degree";
+import { IExpertise } from "./expertises";
+import { IProject } from "./projects/project";
+import { IProvince } from "./province";
+import { IServiceLocation } from "./service-location";
+import { ISkill } from "./skill";
+
+export interface IUserProfile {
+  id: number;
+  first_name: string;
+  last_name: string;
+  phone_number: string;
+  email: string;
+  username: string;
+  puntoship_id: number;
+  has_business_profile: boolean;
+  is_ready_to_work: boolean;
+  company_name: string;
+  company_phone_number: string;
+  company_website_url: string;
+  company_address: string;
+  company_size: ICompanySize;
+  role: string;
+  contact_phone_number: string;
+  identity_number: number;
+  biography: string;
+  awards: string;
+  study_field: string;
+  degree: IDegree;
+  province: IProvince;
+  avatar_url: string;
+  avatar_attachment_id: number;
+  cover_url: string;
+  cover_attachment_id: 2404;
+  deactivated_at: string;
+  profile_approved_at: string;
+  skills: ISkill[];
+  expertises: IExpertise[];
+  service_locations: IServiceLocation[];
+  projects: IProject[];
+}
