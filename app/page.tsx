@@ -1,5 +1,8 @@
+import Link from "next/link";
 
 export default async function Home() {
 
-  return <div>iid</div>;
+  return <div>
+    <Link href='/auth'>test</Link>
+  </div>;
 }
