@@ -1,0 +1,52 @@
+@import "./NavbarDropdown/NavbarDropdown.scss";
+
+.navbar-item {
+  padding: 2rem 0;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    &--title {
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+
+    &--arrow {
+      width: 1.6rem;
+      transition: all ease 250ms;
+      display: flex;
+    }
+  }
+
+
+}
+
+@media (min-width: $lg) {
+  .navbar-item {
+    &:hover {
+
+      .navbar-item {
+
+        &__link {
+          cursor: pointer;
+
+          &--arrow {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .navbar-dropdown {
+        max-height: 100rem;
+        padding: 5rem 8rem;
+        margin-top: 1.7rem;
+
+        * {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

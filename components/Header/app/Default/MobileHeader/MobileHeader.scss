@@ -1,0 +1,49 @@
+.mobile-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 3.2rem;
+  width: 100%;
+  height: calc(100vh - 8.4rem);
+  background: rgba($color: #ffffff, $alpha: 0.9);
+  position: absolute;
+  top: 8.4rem;
+  right: 0;
+  z-index: 9999;
+  overflow: hidden;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+  padding: 5rem 1.6rem;
+  &__navbar,
+  &__search,
+  &__btn {
+    display: flex !important;
+  }
+  &__btn {
+    @extend .flex-center;
+  }
+  &__navbar {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  &__search {
+    width: 100%;
+    height: 5.6rem;
+    input {
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      border-radius: 2.8rem;
+      padding: 1.6rem 5rem 1.6rem 5rem !important;
+      font-size: 1.8rem;
+      color: $placeholder;
+    }
+    img {
+      color: $placeholder;
+      position: absolute;
+      right: 2rem;
+      top: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import "./NavbarDropdownItemSubItems/NavbarDropdownItemSubItems.scss";
+
+.navbar-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    transition: all ease 100ms;
+    white-space: nowrap;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__arrow-icon {
+    transition: all ease 200ms;
+  }
+
+  &--open {
+    .navbar-dropdown-item {
+      &__arrow-icon {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

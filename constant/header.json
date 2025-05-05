@@ -1,0 +1,21 @@
+{
+  "header": [
+    {
+      "name": "ایده‌ها",
+      "link": "/ideas",
+      "href": "/projects",
+      "subMenu": false
+    },
+    {
+      "name": "طراحان",
+      "link": "/designers",
+      "href": "/designers",
+      "subMenu": false
+    },
+    {
+      "name": "مجله",
+      "href": "/blog",
+      "link": "/blog"
+    }
+  ]
+}

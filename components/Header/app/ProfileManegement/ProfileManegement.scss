@@ -1,0 +1,12 @@
+.profile-manegement {
+  @extend .flex-space;
+  flex: 1;
+  max-width: 15rem;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .profile-manegement__icon--hamber {
+    display: none;
+  }
+}

@@ -1,0 +1,18 @@
+.punto-logo {
+  width: 100%;
+  flex: 1;
+  &__img {
+    width: 86px;
+    height: 24px;
+  }
+}
+
+@media(min-width: 1024px) {
+  .punto-logo {
+    flex: .3;
+    &__img {
+      width: 144px;
+      height: 40px;
+    }
+  }
+}
