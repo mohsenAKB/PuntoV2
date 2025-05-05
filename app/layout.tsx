@@ -1,6 +1,6 @@
+import StoreProvider from "@/providers/StoreProvider";
 import "./globals.scss";
-
-
+import StartupProvider from "@/providers/StartupProvider";
 
 export default function RootLayout({
   children,
@@ -8,10 +8,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body >
-        {children}
-        
+    <html lang="fa">
+      <body>
+        <StoreProvider>
+          <StartupProvider>{children}</StartupProvider>
+        </StoreProvider>
       </body>
     </html>
   );
