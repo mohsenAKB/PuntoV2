@@ -1,0 +1,12 @@
+.auth-logo {
+  margin-bottom: 1.6rem;
+  width: 16rem;
+  height: 4rem;
+}
+
+@media (min-width: $xl) {
+  .auth-logo {
+    width: 18.6rem;
+    height: 4.6rem;
+  }
+}

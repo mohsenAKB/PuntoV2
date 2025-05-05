@@ -1,0 +1,24 @@
+.new-auth-header {
+  margin-bottom: 0.8rem;
+
+  &__text {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: $newHighEmphasis;
+    line-height: 2.4rem; 
+  font-family: $secondary-font !important;
+
+
+  }
+}
+
+@media (min-width: $xl) {
+  .new-auth-header {
+    &__text {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: $newHighEmphasis;
+      line-height: 3.2rem;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.new-auth-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: $secondary-font !important;
+
+
+  &__text {
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: $newLowEmphasis;
+    line-height: 2.4rem;
+    font-family: $secondary-font !important;
+
+  }
+
+  &__link {
+    color: $primary;
+    font-family: $secondary-font !important;
+
+  }
+}
+
+@media (min-width: $xl) {
+  .new-auth-footer {
+    &__text {
+      font-weight: 600;
+      font-size: 1.6rem;
+      color: $newLowEmphasis;
+      line-height: 2.4rem;
+    }
+  }
+}

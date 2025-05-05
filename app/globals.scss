@@ -1,0 +1,92 @@
+@import "../styles/utilities.scss";
+@import "../styles/fonts.scss";
+@import "../styles/colors.scss";
+@import "../styles/screens.scss";
+@import "../components/Components.scss";
+
+html {
+  overflow-x: hidden;
+  font-size: 10px;
+  height: 100%;
+  overflow-y: overlay;
+}
+
+body {
+  direction: rtl;
+  font-family: IRANSansX !important;
+  height: 100%;
+  overflow-y: overlay;
+}
+* {
+  font-family: IRANSansX !important;
+}
+input::placeholder {
+  font-family: IRANSansX;
+}
+
+.dir-ltr {
+  direction: ltr;
+}
+
+.cut-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+img[src="/images/default/profile-default-img.jpg"] {
+  border-radius: 100%;
+  width: 10rem;
+  object-fit: contain;
+}
+
+@keyframes slide {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.slide-bck-center {
+  animation: slide 1s ease-in-out 0s infinite alternate forwards running;
+}
+
+video {
+  object-fit: cover !important;
+}
+
+input[type="number"] {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.page-wrapper {
+  padding: 0 2rem;
+  overflow: hidden;
+  background-color: #fafcff;
+}
+.page-wrapper-auth {
+  overflow: hidden;
+  // background-color: #fafcff;
+}
+p > img {
+  margin-block: 2rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+@media (min-width: $lg) {
+  p > img {
+    width: 70% !important;
+  }
+}

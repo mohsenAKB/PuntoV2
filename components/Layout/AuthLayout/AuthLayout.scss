@@ -1,0 +1,71 @@
+@import "./AuthLogo/AuthLogo.scss";
+@import "./AuthHeader/AuthHeader.scss";
+@import "./AuthSubHeader/AuthSubHeader.scss";
+@import "./AuthFooterLink/AuthFooterLink.scss";
+@import "./SmallView/SmallView.scss";
+@import "./LargeView/LargeView.scss";
+@import "./AuthCountdownTimer/AuthCountdownTimer.scss";
+@import "./AuthEditPhoneNumberOrEmail/AuthEditPhoneNumberOrEmail.scss";
+
+.new-auth-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  // padding: 0 2.4rem;
+
+  &__side-banner {
+    display: none;
+  }
+
+  &__patterns {
+    display: block;
+  }
+
+  &__main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: $secondary-font !important;
+    &--content {
+      width: 34.2rem;
+      font-family: $secondary-font !important;
+
+    }
+  }
+}
+
+@media (min-width: $xl) {
+  .new-auth-layout {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    // padding: 2.4rem;
+
+    &__side-banner {
+      display: flex;
+      justify-content: flex-end;
+      flex: 1;
+    }
+
+    &__patterns {
+      display: none;
+    }
+
+    &__main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      &--content {
+        width: 43.2rem;
+      }
+    }
+  }
+}
