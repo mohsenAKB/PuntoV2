@@ -1,7 +1,7 @@
 import { IUserProfile } from "@/@types/entities/user-profile";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface IAuthState {
+export interface IAuthState {
   isAuthenticated: boolean;
   user: IUserProfile | undefined;
 }
