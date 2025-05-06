@@ -1,0 +1,10 @@
+@import './BaseSelectItems/BaseSelectItems.scss';
+
+.base-select {
+  width: 100%;
+  height: 50px;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}

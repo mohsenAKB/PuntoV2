@@ -1,0 +1,36 @@
+.search__header {
+  position: relative;
+  display: none;
+
+  @extend .flex-center;
+  &--input {
+    color: #697077;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding-block: 1rem;
+    padding-inline: 3rem;
+    background: #f2f4f8;
+    border-radius: 2.8rem;
+    width: 5rem;
+    height: 5rem;
+    font-family: IRANSansX;
+    cursor: pointer;
+    transition: all 0.5s ease-in;
+    &:focus {
+      width: 30rem !important;
+      padding-inline: 5rem !important;
+    }
+  }
+  &--icon {
+    color: $placeholder;
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+    cursor: pointer;
+  }
+}
+@media (min-width: $md) {
+  .search__header {
+    display: block;
+  }
+}

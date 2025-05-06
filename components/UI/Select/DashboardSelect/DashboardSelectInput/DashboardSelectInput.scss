@@ -1,0 +1,77 @@
+@import "./DashboardSelectInputItem/DashboardSelectInputItem.scss";
+@import "./DashboardSelectInputNoData/DashboardSelectInputNoData.scss";
+
+.dashboard-select-input {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__input {
+    height: 50px;
+    background-color: $authInputBackground;
+    border: 1px solid rgba($dashboardInputBorderColor, 0.23);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+
+    &--placeholder {
+      color: $dashboardSelectPlaceholder;
+      font-size: 12px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      gap: 10px;
+    }
+
+    &--input {
+      width: 100%;
+      height: 100%;
+      outline: none;
+      background-color: transparent;
+      font-size: 14px;
+      padding: 0;
+    }
+
+    &--active {
+      border-width: 2px;
+      border-color: $uploaderPrimaryBackgroundColor;
+    }
+
+
+    &:hover {
+      transition: border-color ease 150ms;
+      border-color: $uploaderPrimaryBackgroundColor;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 10px;
+
+    &--spacer {
+      width: 1px;
+      height: auto;
+      background-color: $dashboardSelectIcon;
+    }
+
+    svg {
+      path {
+        fill: $dashboardSelectIcon;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        path {
+          fill: $dashboardSelectPlaceholder;
+        }
+      }
+    }
+  }
+
+
+}

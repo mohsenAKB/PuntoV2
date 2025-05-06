@@ -1,0 +1,185 @@
+.base-tooltip {
+  position: relative;
+  width: fit-content;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__content {
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    white-space: nowrap;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.3s,
+      visibility 0.3s;
+
+    // Arrow styling
+    &::before {
+      content: '';
+      position: absolute;
+      border-width: 5px;
+      /* Size of the arrow */
+      border-style: solid;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity 0.25s,
+        visibility 0.25s;
+    }
+
+    // Placement for top
+    &--top {
+      bottom: 200%;
+      /* Position the tooltip further above the element */
+      left: 50%;
+      transform: translateX(-50%);
+
+      &::before {
+        bottom: -10px;
+        /* Space between the tooltip and the arrow */
+        left: 50%;
+        transform: translateX(-50%);
+        border-color: rgba(0, 0, 0, 0.8) transparent
+          transparent transparent;
+      }
+    }
+
+    // Placement for bottom
+    &--bottom {
+      top: 170%;
+      /* Position the tooltip below the element */
+      left: 50%;
+      transform: translateX(-50%);
+
+      &::before {
+        top: -10px;
+        /* Space between the tooltip and the arrow */
+        left: 50%;
+        transform: translateX(-50%);
+        border-color: transparent transparent
+          rgba(0, 0, 0, 0.8) transparent;
+      }
+    }
+
+    // Placement for left
+    &--left {
+      right: 120%;
+      /* Position the tooltip to the left of the element */
+      top: 50%;
+      transform: translateY(-50%);
+
+      &::before {
+        right: -10px;
+        /* Space between the tooltip and the arrow */
+        top: 50%;
+        transform: translateY(-50%);
+        border-color: transparent transparent transparent
+          rgba(0, 0, 0, 0.8);
+      }
+    }
+
+    // Placement for right
+    &--right {
+      left: 120%;
+      /* Position the tooltip to the right of the element */
+      top: 50%;
+      transform: translateY(-50%);
+
+      &::before {
+        left: -10px;
+        /* Space between the tooltip and the arrow */
+        top: 50%;
+        transform: translateY(-50%);
+        border-color: transparent rgba(0, 0, 0, 0.8)
+          transparent transparent;
+      }
+    }
+
+    // Placement for top-left
+    &--top-left {
+      bottom: 200%;
+      /* Position the tooltip further above the element */
+      left: 0;
+      /* Align with the left edge */
+
+      &::before {
+        bottom: -10px;
+        /* Space between the tooltip and the arrow */
+        left: 10px;
+        /* Align with the left edge */
+        border-color: rgba(0, 0, 0, 0.8) transparent
+          transparent transparent;
+      }
+    }
+
+    // Placement for top-right
+    &--top-right {
+      bottom: 200%;
+      /* Position the tooltip further above the element */
+      right: 0;
+      /* Align with the right edge */
+
+      &::before {
+        bottom: -10px;
+        /* Space between the tooltip and the arrow */
+        right: 10px;
+        /* Align with the right edge */
+        border-color: rgba(0, 0, 0, 0.8) transparent
+          transparent transparent;
+      }
+    }
+
+    // Placement for bottom-left
+    &--bottom-left {
+      top: 200%;
+      /* Position the tooltip below the element */
+      left: 0;
+      /* Align with the left edge */
+
+      &::before {
+        top: -10px;
+        /* Space between the tooltip and the arrow */
+        left: 10px;
+        /* Align with the left edge */
+        border-color: transparent transparent
+          rgba(0, 0, 0, 0.8) transparent;
+      }
+    }
+
+    // Placement for bottom-right
+    &--bottom-right {
+      top: 200%;
+      /* Position the tooltip below the element */
+      right: 0;
+      /* Align with the right edge */
+
+      &::before {
+        top: -10px;
+        /* Space between the tooltip and the arrow */
+        right: 10px;
+        /* Align with the right edge */
+        border-color: transparent transparent
+          rgba(0, 0, 0, 0.8) transparent;
+      }
+    }
+  }
+
+  // Show tooltip on hover
+  &:hover .base-tooltip__content {
+    opacity: 1;
+    visibility: visible;
+
+    &::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

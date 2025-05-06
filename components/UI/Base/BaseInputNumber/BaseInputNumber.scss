@@ -1,0 +1,17 @@
+.BaseInputNumber {
+  width: 100%;
+  height: 5rem;
+  border-radius: 1.4rem;
+  padding-inline: 1.5rem;
+
+  /* Remove spin buttons in WebKit-based browsers (e.g., Chrome, Safari) */
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Remove arrows in Firefox */
+  -moz-appearance: textfield; /* Legacy support */
+  appearance: textfield;
+}

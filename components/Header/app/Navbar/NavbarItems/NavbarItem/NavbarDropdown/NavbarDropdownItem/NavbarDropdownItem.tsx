@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FC, ReactNode, useEffect, useMemo, useState } from "react";
+import { FC, JSX, ReactNode, useEffect, useMemo, useState } from "react";
 import NavbarDropdownItemSubItems from "./NavbarDropdownItemSubItems/NavbarDropdownItemSubItems";
 import ArrowItem from "./Icons/ArrowItem";
 import NavbarBulletIcon from "./Icons/NavbarBulletIcon";

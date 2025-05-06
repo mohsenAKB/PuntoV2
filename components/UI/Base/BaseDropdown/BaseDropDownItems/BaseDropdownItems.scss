@@ -1,0 +1,27 @@
+@import "./BaseDropDownItem/BaseDropDownItem.scss";
+
+.base-dropdown-items {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 8px 40px 0px #0000000A;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  overflow: hidden;
+  margin-top: 5px;
+
+  transition: max-height ease 350ms;
+
+  &--open {
+    max-height: 1000px;
+    padding: 10px 5px;
+  }
+
+  &--close {
+    max-height: 0px;
+    padding: 0;
+  }
+}

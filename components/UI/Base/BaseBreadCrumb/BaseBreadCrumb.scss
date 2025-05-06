@@ -1,0 +1,17 @@
+.base-breadcrumb {
+    width: 100%;
+  &__wrapper {
+    display: flex;
+  }
+  &__item
+  {
+    padding-inline: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a 
+    {
+        padding-right: .5rem;
+    }
+  }
+}

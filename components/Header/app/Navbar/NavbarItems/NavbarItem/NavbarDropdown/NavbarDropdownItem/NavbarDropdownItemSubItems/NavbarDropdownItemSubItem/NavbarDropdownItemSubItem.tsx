@@ -1,4 +1,4 @@
-import { FC, MouseEventHandler, ReactNode, useMemo } from "react";
+import { FC, JSX, MouseEventHandler, ReactNode, useMemo } from "react";
 import NavbarDropdownItem, { NavbarDropdownItemProps } from "../../NavbarDropdownItem";
 import Link from "next/link";
 import { it } from "node:test";

@@ -1,0 +1,30 @@
+.search__header--expanded {
+  position: relative;
+  display: none;
+  margin-inline: 1rem;
+  @extend .flex-center;
+  .search__header--expanded--input {
+    color: $placeholder;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding-block: 1rem;
+    padding-inline: 5rem;
+    background: $tagBG;
+    border-radius: 2.8rem;
+    // width: 30rem;
+    width: 100%;
+    height: 5rem;
+    font-family: IRANSansX;
+  }
+  .search__header--icon--expanded {
+    color: $placeholder;
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+  }
+}
+@media (min-width: $md) {
+  .search__header--expanded {
+    display: flex;
+  }
+}

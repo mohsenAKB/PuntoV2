@@ -1,0 +1,49 @@
+@import "./BaseTab/BaseTab.scss";
+
+.base-tabs {
+  .base-tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    position: relative;
+
+    .base-tab-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      background: #0070f3;
+      z-index: -1;
+      transition: width 0.3s, transform 0.3s;
+    }
+
+    button {
+      position: relative;
+      padding: 10px 20px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: color 0.3s;
+      z-index: 1;
+
+      &.base-tab-active {
+        color: white;
+      }
+    }
+  }
+
+  .base-tab-content-wrapper {
+    .base-tab-content {
+      padding: 1rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+
+      &.base-tab-active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}

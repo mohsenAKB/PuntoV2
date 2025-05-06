@@ -1,11 +1,8 @@
 import Image from "next/image";
-import React, { FC, useContext, useMemo, useState } from "react";
+import React, { FC, JSX, useContext, useMemo, useState } from "react";
 import UserProfile from "../Dropdown/UserProfile/UserProfile";
-import { useSelector } from "react-redux";
-import useUser from "@/hook/use-user";
-import { BaseBackURL } from "@/constant";
 import { defaultURL } from "@/constant/url";
-import useAuth from "@/hook/refactor/use-auth";
+import useAuth from "@/hook/use-auth";
 
 const ClientProfile: FC = (): JSX.Element => {
   const { user } = useAuth();

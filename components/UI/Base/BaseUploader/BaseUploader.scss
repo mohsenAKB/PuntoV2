@@ -1,0 +1,9 @@
+.base-uploader {
+  display: inline-block;
+  width: auto;
+  height: 5rem;
+
+  &__input {
+    display: none;
+  }
+}

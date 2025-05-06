@@ -1,0 +1,25 @@
+.header__btn__wrapper {
+  cursor: pointer;
+  position: relative;
+  color: $tagBG;
+  margin-right: 1rem;
+
+  .header__btn {
+    width: 19rem;
+    height: 5rem;
+    background: #12499f;
+    font-size: 1.8rem;
+    border-radius: 4px;
+  }
+  .header__btn--icon {
+    position: absolute;
+    top: 1rem;
+    right: 1.3rem;
+  }
+}
+
+@media (min-width: $md) {
+  .header__btn__wrapper {
+    display: block;
+  }
+}

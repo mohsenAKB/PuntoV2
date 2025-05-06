@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, JSX, useEffect, useMemo, useState } from "react";
 import NavbarSubgroupItem, { NavbarDropdownItemProps } from "./NavbarDropdownItem/NavbarDropdownItem";
 
 export interface NavbarDropdown {

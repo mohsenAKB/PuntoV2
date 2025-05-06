@@ -1,4 +1,4 @@
-import { FC, useMemo } from "react";
+import { FC, JSX, useMemo } from "react";
 import { NavbarDropdownItemProps } from "../NavbarDropdownItem";
 import NavbarDropdownItemSubItem from "./NavbarDropdownItemSubItem/NavbarDropdownItemSubItem";
 

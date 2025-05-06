@@ -1,0 +1,32 @@
+.dashboard-button {
+  font-size: 16px;
+  width: 149px;
+  line-height: 26px;
+  font-weight: 500;
+  color: white;
+  background: #12499f;
+  height: 48px;
+  border-radius: 4px;
+  padding-inline: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s;
+
+  &:hover {
+    box-shadow: 0_0_18px_5px_rgba (18, 73, 159, 0.3);
+
+  }
+
+  &:disabled {
+    opacity: 70%;
+    cursor: not-allowed;
+  }
+}
+
+@media (min-width: 568px) {
+  .dashboard-button {
+    font-size: 14px;
+    width: 250px;
+  }
+}

@@ -1,7 +1,4 @@
-import React, { FC, JSX, useMemo, useState } from "react";
-import data from "@/constant/header.json";
-import Link from "next/link";
-import Image from "next/image";
+import React, { FC, JSX } from "react";
 import classNames from "classnames";
 import NavbarItems from "./NavbarItems/NavbarItems";
 

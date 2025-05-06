@@ -1,12 +1,12 @@
 import { FC, JSX, useMemo } from "react";
 import NavbarItem, { NavbarItemProps } from "./NavbarItem/NavbarItem";
 import { NavbarDropdownItemProps } from "./NavbarItem/NavbarDropdown/NavbarDropdownItem/NavbarDropdownItem";
-import useConfigs from "@/hook/refactor/use-configs";
 import { IExpertise } from "@/@types/entities/expertises";
 import { IServiceLocation } from "@/@types/entities/service-location";
 import { ISkill } from "@/@types/entities/skill";
 import { ISmallResidentialSpace } from "@/@types/entities/small-residential-space";
 import { IUsage } from "@/@types/entities/usage";
+import useConfigs from "@/hook/use-configs";
 
 
 const NavbarItems: FC = (): JSX.Element => {
@@ -23,7 +23,7 @@ const NavbarItems: FC = (): JSX.Element => {
   const serviceLocationsItems = useMemo<NavbarDropdownItemProps[]>(() => {
     const serviceLocations = serviceLocationsList as IServiceLocation[];
 
-    return serviceLocations.map((location) => ({
+    return serviceLocations?.map((location) => ({
       title: location.name,
       link: `/designers/?service_location=${location.id}`,
     }));
@@ -32,7 +32,7 @@ const NavbarItems: FC = (): JSX.Element => {
   const skillsItems = useMemo<NavbarDropdownItemProps[]>(() => {
     const skills = skillList as ISkill[];
 
-    return skills.map((skill) => ({
+    return skills?.map((skill) => ({
       title: skill.name,
       link: `/designers/?skill=${skill.id}`,
     }));
@@ -41,7 +41,7 @@ const NavbarItems: FC = (): JSX.Element => {
   const expertiseItems = useMemo<NavbarDropdownItemProps[]>(() => {
     const expertise = expertisesList as IExpertise[];
 
-    return expertise.map((ex) => ({
+    return expertise?.map((ex) => ({
       title: ex.name,
       link: `/designers/?expertise=${ex.id}`,
     }));
@@ -51,7 +51,7 @@ const NavbarItems: FC = (): JSX.Element => {
     const smallResidentialSpaces =
       smallResidentialSpacesList as ISmallResidentialSpace[];
 
-    return smallResidentialSpaces.map((smallResidentialSpace) => ({
+    return smallResidentialSpaces?.map((smallResidentialSpace) => ({
       title: smallResidentialSpace.name,
       link: `/projects/?small_residential_space=${smallResidentialSpace.id}`,
     }));
@@ -60,7 +60,7 @@ const NavbarItems: FC = (): JSX.Element => {
   const usagesItems = useMemo<NavbarDropdownItemProps[]>(() => {
     const usages = usageList as IUsage[];
 
-    return usages.map((usage) => {
+    return usages?.map((usage) => {
       if (usage.name == "مسکونی")
         return {
           title: usage.name,
@@ -118,7 +118,7 @@ const NavbarItems: FC = (): JSX.Element => {
   }, [usagesItems, expertiseItems]);
 
   const navbarItemsElements = useMemo(() => {
-    return navbarItems.map((navbarItem) => (
+    return navbarItems?.map((navbarItem) => (
       <NavbarItem key={navbarItem.title} {...navbarItem} />
     ));
   }, [navbarItems]);

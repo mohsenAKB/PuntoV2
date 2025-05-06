@@ -1,0 +1,46 @@
+@import "./DashboardSelectInput/DashboardSelectInput.scss";
+
+.dashboard-select {
+  height: auto;
+
+  &__input {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-items {
+    background-color: $authButtonColor;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px rgba($dashboardInputBorderColor, 0.1), 0 4px 11px rgba($dashboardInputBorderColor, 0.1);
+    padding-bottom: 4px;
+    padding-top: 4px;
+  }
+
+  &-item {
+    font-size: 12px;
+    user-select: none;
+    color: inherit;
+    padding: 8px 12px;
+    transition: background-color ease 150ms;
+
+    &:hover {
+      background-color: rgba($uploaderPreviewPrimaryBackgroundColor, 0.45);
+      cursor: pointer;
+    }
+
+    &--selected {
+      background-color: rgba($uploaderPreviewPrimaryBackgroundColor, 0.3);
+      font-weight: bold;
+
+    }
+  }
+
+  &--danger {
+    .dashboard-select {
+      &-input__input {
+        border-color: $primary;
+        border-width: 2px;
+      }
+    }
+  }
+}

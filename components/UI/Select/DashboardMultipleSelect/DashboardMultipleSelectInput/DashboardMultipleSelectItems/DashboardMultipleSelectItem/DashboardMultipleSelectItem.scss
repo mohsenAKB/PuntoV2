@@ -1,0 +1,36 @@
+.dashboard-multiple-select-item-input {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 10px;
+  background-color: rgba($uploaderPrimaryBackgroundColor, 0.15);
+  color: $uploaderPrimaryBackgroundColor;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 4px 10px;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: rgba($uploaderPrimaryBackgroundColor, 0.3);
+
+    svg {
+      width: 10px;
+      height: 10px;
+
+      path {
+        fill: $uploaderPrimaryBackgroundColor;
+      }
+
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($uploaderPrimaryBackgroundColor, 0.4);
+    }
+  }
+}

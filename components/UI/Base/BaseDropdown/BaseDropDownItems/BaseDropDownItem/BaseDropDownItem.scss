@@ -1,0 +1,9 @@
+.base-dropdown-item {
+  padding: 5px;
+  border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #3b82f680;
+  }
+}

@@ -1,0 +1,34 @@
+@import "./DesignerProfileFilterInput/DesignerProfileFilterInput.scss";
+
+.designer-profile-filter {
+  min-height: 50px;
+  width: auto;
+  height: fit-content !important;
+
+  &-items {
+    background-color: $authButtonColor;
+    box-shadow: 0px 0px 4px 0px #00000052;
+
+    .base-select-item {
+      display: flex;
+      justify-content: center;
+      padding: 8px 16px;
+      font-size: 14px;
+      white-space: nowrap;
+
+      &--selected {
+        background-color: rgba($uploaderPrimaryBackgroundColor, 0.8) !important;
+        color: white !important;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: $dashboardSelectIcon;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+  }
+}

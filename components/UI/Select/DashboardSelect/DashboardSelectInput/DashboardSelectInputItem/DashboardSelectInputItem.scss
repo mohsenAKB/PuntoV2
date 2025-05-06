@@ -1,0 +1,21 @@
+.dashboard-select-input-item {
+
+  background-color: rgba($uploaderPrimaryBackgroundColor, 0.8);
+  color: $authInputBackground;
+  padding: 3px 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  transition: all ease 150ms;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $uploaderPrimaryBackgroundColor;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+}
