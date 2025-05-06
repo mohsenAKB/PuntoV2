@@ -9,6 +9,8 @@ html {
   font-size: 10px;
   height: 100%;
   overflow-y: overlay;
+  line-height: 15px;
+  font-feature-settings: normal;
 }
 
 *,
@@ -30,6 +32,10 @@ html {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  direction: rtl;
+  font-family: IRANSansX !important;
+  height: 100%;
+  overflow-y: overlay;
 }
 
 img,
@@ -75,6 +81,12 @@ button {
   border: none;
   box-shadow: none;
 }
+input[type="submit"] {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
 h1,
 h2,
 h3,
@@ -89,12 +101,6 @@ h6 {
   isolation: isolate;
 }
 
-body {
-  direction: rtl;
-  font-family: IRANSansX !important;
-  height: 100%;
-  overflow-y: overlay;
-}
 * {
   font-family: IRANSansX !important;
 }

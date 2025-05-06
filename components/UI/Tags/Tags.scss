@@ -1,0 +1,18 @@
+.tag {
+  border-radius: 5.2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.blue-type {
+  border: 1px solid $tagBorder;
+  padding: 0.4rem 1rem;
+  color: $uploaderPrimaryBackgroundColor;
+  background: $tagBG;
+}
+.black-type {
+  border: 1px solid $tagBorder;
+  padding: 1.2rem 1.6rem;
+  color: $introDes;
+  background: transparent;
+}

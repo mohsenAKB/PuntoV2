@@ -1,0 +1,91 @@
+@import "./Introduction/Introduction.scss";
+@import "./Search/Search.scss";
+
+.intro-header {
+  background-image: url("/images/mainBanner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 30% bottom;
+  height: 100vh;
+  display: flex;
+  position: relative;
+
+  &__right {
+    position: absolute;
+    top: 15%;
+    padding-right: 1rem;
+    padding-block: 5rem 4rem;
+    flex: 100%;
+    @extend .flex-col;
+  }
+
+  &__left {
+    // flex: 40%;
+  }
+}
+
+@media (min-width: 360px) {
+  .intro-header {
+    background-repeat: no-repeat;
+    background-position: 43%;
+    height: 110vh;
+    display: flex;
+  }
+}
+
+@media (min-width: 480px) {
+  .intro-header {
+    background-position: top;
+    height: 90vh;
+    display: flex;
+
+    &__right {
+      padding-right: 1rem;
+      padding-block: 5rem 4rem;
+      flex: 100%;
+    }
+
+    &__left {
+      // flex: 40%;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .intro-header {
+    background-position: bottom;
+    height: 70vh;
+    display: flex;
+  }
+}
+
+@media (min-width: $md) {
+  .intro-header {
+    height: 70vh;
+
+    &__right {
+      padding-right: 5rem;
+      padding-block: 5rem 4rem;
+      flex: 60%;
+      @extend .flex-col;
+    }
+
+    &__left {
+      flex: 40%;
+    }
+  }
+}
+
+@media (min-width: $lg) {
+  .intro-header {
+    background-position: center;
+    height: 110vh;
+    display: flex;
+
+    &__right {
+      padding-right: 20rem;
+      padding-block: 5rem 4rem;
+      flex: 100%;
+    }
+  }
+}

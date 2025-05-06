@@ -1,10 +1,15 @@
-import React, { FC, JSX } from 'react'
+'use client'
+import React, { FC, JSX } from "react";
+import IntroHeader from "./IntroHeader/IntroHeader";
 
-export interface IHomeProps
-{}
+export interface IHomeProps {}
 
 const Home: FC<IHomeProps> = (): JSX.Element => {
-  return <div>Home</div>;
+  return (
+    <main>
+      <IntroHeader />
+    </main>
+  );
 };
 
-export default Home
+export default Home;

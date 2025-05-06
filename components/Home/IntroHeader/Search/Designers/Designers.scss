@@ -1,0 +1,103 @@
+.intro-header__right--search-input {
+  position: relative;
+  width: fit-content;
+  &-icon {
+    position: absolute;
+      top: -1rem;
+    padding-inline: 1rem;
+  }
+  &-text {
+    width: 40rem;
+    height: 8rem;
+    padding-right: 4rem;
+    font-size: 1.3rem;
+    color: $placeholder;
+    &::placeholder {
+      color: $placeholder;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+  }
+  .search-dropDown {
+    width: 100%;
+    background-color: #fff;
+    height: 24rem;
+    position: absolute;
+    padding: 1rem;
+    overflow-y: scroll;
+    z-index: 999;
+    &__result {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    &__text {
+      font-size: 1.2rem;
+      color: #697077;
+      font-family: IRANSansX;
+      font-style: normal;
+      font-weight: 400;
+      padding: 2rem;
+      span {
+        font-size: 1.4rem;
+        font-weight: bold;
+        font-weight: 900;
+        color: #000;
+      }
+    }
+    .search-dropDown__result--item {
+      padding-right: 2rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #21272a;
+    }
+  }
+  &-submit {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #12499f;
+    color: #fff;
+    width: 8rem;
+    height: 64px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: $md) {
+  .intro-header__right--search-input {
+    position: relative;
+    width: fit-content;
+    &-icon {
+      position: absolute;
+      top: -1rem;
+      padding-inline: 1rem;
+    }
+    &-text {
+      width: 63rem;
+      height: 8rem;
+      padding-right: 4rem;
+      font-size: 1.8rem;
+      color: $placeholder;
+      &::placeholder {
+        color: $placeholder;
+        font-size: 1.8rem;
+        font-weight: 500;
+      }
+    }
+    &-submit {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: #12499f;
+      color: #fff;
+      width: 192px;
+      height: 64px;
+      font-size: 1.8rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}
