@@ -1,0 +1,33 @@
+.top-card {
+  width: 100&;
+  @extend .flex-between;
+  padding-bottom: 1.1rem;
+  &__heading {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $introDes;
+  }
+  &__link {
+    color: $primary;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+}
+
+@media (min-width: $lg) {
+  .top-card {
+    width: 100&;
+    @extend .flex-between;
+    padding-bottom: 1.1rem;
+    &__heading {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $introDes;
+    }
+    &__link {
+      color: $primary;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+  }
+}

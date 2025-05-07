@@ -1,0 +1,103 @@
+.swiper-button-prev--usage {
+  @extend .arrow-bg;
+
+  &:after {
+    content: "" !important;
+  }
+}
+.swiper-button-prev--style {
+  @extend .arrow-bg;
+
+  &:after {
+    content: "" !important;
+  }
+}
+.swiper-button-prev--material {
+  @extend .arrow-bg;
+
+  &:after {
+    content: "" !important;
+  }
+}
+.swiper-button-prev--small_residential_space {
+  @extend .arrow-bg;
+  &:after {
+    content: "" !important;
+  }
+}
+.swiper-button-prev--skill {
+  @extend .arrow-bg;
+  &:after {
+    content: "" !important;
+  }
+}
+
+.swiper-button-prev.swiper-button-prev--skill {
+  @extend .prev-arrow;
+}
+.swiper-button-prev.swiper-button-prev--small_residential_space {
+  @extend .prev-arrow;
+}
+.swiper-button-prev.swiper-button-prev--material {
+  @extend .prev-arrow;
+}
+.swiper-button-prev.swiper-button-prev--style {
+  @extend .prev-arrow;
+}
+.swiper-button-prev.swiper-button-prev--usage {
+  @extend .prev-arrow;
+}
+
+@media (min-width: 510px) {
+  .swiper-button-prev.swiper-button-prev--usage {
+    left: 90%;
+    top: 12rem;
+  }
+  .swiper-button-prev.swiper-button-prev--style {
+    left: 90%;
+    top: 12rem;
+  }
+  .swiper-button-prev.swiper-button-prev--material {
+    left: 90%;
+    top: 12rem;
+  }
+  .swiper-button-prev.swiper-button-prev--small_residential_space {
+    left: 90%;
+    top: 12rem;
+  }
+  .swiper-button-prev.swiper-button-prev--skill {
+    left: 90%;
+    top: 12rem;
+  }
+}
+
+@media (min-width: $md) {
+  .swiper-button-prev.swiper-button-prev--usage {
+    left: 99%;
+    top: 12rem;
+  }
+  .swiper-button-prev.swiper-button-prev--style {
+    left: 99%;
+    top: 12rem;
+  }
+  .swiper-button-prev.swiper-button-prev--material {
+    left: 99%;
+    top: 12rem;
+  }
+  .swiper-button-prev.swiper-button-prev--small_residential_space {
+    left: 99%;
+    top: 12rem;
+  }
+  .swiper-button-prev.swiper-button-prev--skill {
+    left: 99%;
+    top: 12rem;
+  }
+}
+.swiper-button-prev {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

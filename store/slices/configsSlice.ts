@@ -41,7 +41,6 @@ export const configsSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { setConfigs } = configsSlice.actions;
 
 export default configsSlice.reducer;

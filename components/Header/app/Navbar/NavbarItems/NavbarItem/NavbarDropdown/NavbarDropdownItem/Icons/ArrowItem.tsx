@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, JSX } from "react";
 
 const ArrowItem: FC = (): JSX.Element => {
   return (
@@ -13,7 +13,7 @@ const ArrowItem: FC = (): JSX.Element => {
         d="M7.80929 1L2 6.90311L8 13"
         stroke="#12499F"
         strokeWidth="2"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
     </svg>
   );

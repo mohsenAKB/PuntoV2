@@ -1,0 +1,9 @@
+@import "./CarouselWrapper/CarouselWrapper.scss";
+@import "./CarouselItem/CarouselItem.scss";
+@import "./NextButton/NextButtonSlider.scss";
+@import "./PrevButton/PrevButtonSlider.scss";
+
+.carousel {
+  position: relative;
+  margin-block: 4.8rem;
+}
