@@ -13,7 +13,7 @@ const Home: FC<IHomeProps> = (): JSX.Element => {
   return (
     <main>
       <IntroHeader />
-      <section className="home_section">
+      <div className="home_section">
         <div className="home__usage-slider">
           <Carousel
             heading="جست‌و‌جوی ایده بر اساس کاربری"
@@ -25,7 +25,7 @@ const Home: FC<IHomeProps> = (): JSX.Element => {
             onClick={() => {}}
           />
         </div>
-      </section>
+      </div>
     </main>
   );
 };

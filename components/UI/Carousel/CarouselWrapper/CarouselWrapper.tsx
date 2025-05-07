@@ -9,6 +9,7 @@ import { IMaterial } from "@/@types/entities/material";
 import { ISmallResidentialSpace } from "@/@types/entities/small-residential-space";
 import { IStyle } from "@/@types/entities/style";
 import { IUsage } from "@/@types/entities/usage";
+import "swiper/css";
 
 export interface CarouselWrapperProps extends CarouselProps {
   data: IUsage[] | IStyle[] | IMaterial[] | ISmallResidentialSpace[];
@@ -46,7 +47,8 @@ const CarouselWrapper: FC<CarouselWrapperProps> = ({
   return (
     <div className={`${entity}-slider-items`}>
       <Swiper
-        slidesPerView={2}
+        direction="horizontal"
+        slidesPerView={3}
         breakpoints={{
           640: {
             slidesPerView: 3,
