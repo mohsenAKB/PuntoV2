@@ -1,0 +1,33 @@
+.new-auth-passcode-input__wrapper {
+  position: relative;
+
+  .new-auth-passcode-input {
+    .ant-otp {
+      justify-content: space-between;
+
+      .ant-input {
+        line-height: 0;
+        padding: 1.2rem 1.2rem;
+        border: 1px solid $newBorder;
+        font-weight: 600;
+        font-size: 1.4rem;
+        color: $newHighEmphasis;
+        width: 4.8rem;
+        height: 4.8rem;
+
+        &:focus,
+        &:hover,
+        &:active,
+        &:focus-within,
+        &:focus-visible {
+          border-color: $newBorderActive;
+          box-shadow: none;
+        }
+      }
+
+      .ant-input-status-error {
+        border: 1px solid $newDanger;
+      }
+    }
+  }
+}

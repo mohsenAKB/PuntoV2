@@ -1,0 +1,8 @@
+@import "./FormItemGroupInput/FormItemGroupInput.scss";
+
+.new-form-item-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.6rem;
+  width: 100%;
+}

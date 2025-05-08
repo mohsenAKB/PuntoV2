@@ -1,0 +1,33 @@
+.new-remember-me {
+  font-weight: 500;
+  line-height: 2.4rem;
+  font-size: 1.3rem;
+  color: $newMediumEmphasis;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: $secondary-font !important;
+
+
+  input[type="checkbox"] {
+    appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border: 0.15rem solid $newBorder;
+    border-radius: 0.5rem;
+    place-content: center;
+    display: grid;
+    cursor: pointer;
+
+    &:checked {
+      background-color: $primary;
+    }
+
+    &:checked::before {
+      content: "✔";
+      color: white;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+  }
+}

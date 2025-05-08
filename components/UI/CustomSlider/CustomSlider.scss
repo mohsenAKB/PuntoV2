@@ -1,0 +1,15 @@
+@import "./CustomNavigation/CustomNavigation.scss";
+
+.custom-slider {
+
+
+  .swiper {
+    &-wrapper {
+      gap: 10px;
+    }
+
+    &-slide {
+      width: auto;
+    }
+  }
+}

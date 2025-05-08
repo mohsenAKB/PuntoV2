@@ -1,0 +1,10 @@
+.filter-list-item {
+  width: 100%;
+}
+
+@media (min-width: $sm) {
+  .filter-list-item {
+    width: fit-content;
+    min-width: 180px;
+  }
+}

@@ -1,0 +1,38 @@
+.filters-select {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 4rem;
+  &__heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 2rem;
+    padding-top: 4rem;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-right: 2rem;
+    &--item {
+      margin-block: 1rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      .ant-checkbox {
+        transform: scale(1.8);
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+@media (min-width: $lg) {
+  .filters-select {
+    .filters-select__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &__heading {
+      font-size: 2rem;
+    }
+  }
+}

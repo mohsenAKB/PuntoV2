@@ -1,0 +1,27 @@
+.profile-preview-uploader-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &--delete {
+    background: url("/assets/icons/delete.svg");
+    width: 12px;
+    height: 15px;
+  }
+
+  &--edit {
+    background: url("/assets/icons/edit.svg");
+    width: 15px;
+    height: 15px;
+  }
+
+  &__item {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

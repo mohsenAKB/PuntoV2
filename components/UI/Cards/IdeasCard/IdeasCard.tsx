@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React, { FC } from "react";
+import { BaseBackURL } from "@/constant";
 import { useRouter } from "next/navigation";
+import { IProject } from "@/@types/entity/refactor/project";
 import Link from "next/link";
-import { JSX } from "react/jsx-runtime";
-import { IProject } from "@/@types/entities/projects/project";
 
 export interface IdeasCardProps {
   project: IProject;

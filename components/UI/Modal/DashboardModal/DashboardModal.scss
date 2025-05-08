@@ -1,0 +1,31 @@
+@import "./DashboardModalHeader/DashboardModalHeader.scss";
+
+.dashboard-modal {
+
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  overflow-x: hidden;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 20px;
+
+  &__backdrop {
+    background-color: rgba(0, 0, 0, 0.60);
+  }
+
+  &__children {
+    padding: 20px 30px;
+    padding-top: 0;
+  }
+
+}
+
+@media (min-width: $sm) {
+  .dashboard-modal {
+    &__children {
+      padding: 30px;
+      padding-top: 10px;
+    }
+  }
+}

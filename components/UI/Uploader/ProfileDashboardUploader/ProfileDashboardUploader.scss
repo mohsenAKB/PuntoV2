@@ -1,0 +1,15 @@
+@import "./ProfileDashboardUploaderWrapper/ProfileDashboardUploaderWrapper.scss";
+
+.profile-dashboard-uploader {
+  background-color: $uploaderPrimaryBackgroundColor;
+  width: fit-content;
+  height: auto;
+  color: $authButtonColor;
+  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

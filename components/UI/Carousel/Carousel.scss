@@ -1,9 +1,23 @@
-@import "./CarouselWrapper/CarouselWrapper.scss";
-@import "./CarouselItem/CarouselItem.scss";
-@import "./NextButton/NextButtonSlider.scss";
-@import "./PrevButton/PrevButtonSlider.scss";
+@import "./Items/Items.scss";
+.usages-slider {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  gap: 1rem;
+  &__details {
+    display: flex;
+    justify-content: space-between;
 
-.carousel {
-  position: relative;
-  margin-block: 4.8rem;
+    &--heading {
+      font-size: 20px;
+      font-weight: 700;
+      color: #343a3f;
+    }
+    &--link {
+      font-size: 14px;
+      font-weight: 700;
+      color: #12499f;
+      text-decoration: underline;
+    }
+  }
 }

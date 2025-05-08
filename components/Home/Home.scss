@@ -1,6 +1,5 @@
 @import "./IntroHeader/IntroHeader.scss";
 
-
 .home {
   &_section {
     padding: 1rem;
@@ -129,13 +128,13 @@
           gap: 1.6rem;
         }
       }
-    }
-    .featured-card-section {
-      display: flex;
-      align-items: start;
-      flex-direction: row;
-      gap: 4rem;
-      margin-block: 4.8rem;
+      .featured-card-section {
+        display: flex;
+        align-items: start;
+        flex-direction: row !important;
+        gap: 1rem;
+        margin-block: 4.8rem;
+      }
     }
   }
 }

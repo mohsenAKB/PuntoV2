@@ -1,0 +1,23 @@
+.custom-navigation {
+  &__button {
+    background: #f2f4f8;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    padding: 5px;
+    box-sizing: content-box;
+    top: var(--swiper-navigation-top-offset, 63%);
+
+    &::after {
+      display: none;
+    }
+
+    &--next {
+      right: var(--swiper-navigation-sides-offset, 7%);
+    }
+
+    &--prev {
+      left: var(--swiper-navigation-sides-offset, 7%);
+    }
+  }
+}

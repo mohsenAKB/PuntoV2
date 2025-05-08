@@ -1,0 +1,8 @@
+@import "./DashboardTagInputItem/DashboardTagInputItem.scss";
+
+.dashboard-tag-input-items {
+  display: flex;
+  padding-top: 15px;
+  gap: 20px;
+  flex-wrap: wrap;
+}

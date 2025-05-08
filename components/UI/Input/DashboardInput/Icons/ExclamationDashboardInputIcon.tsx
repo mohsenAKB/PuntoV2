@@ -1,0 +1,28 @@
+import BaseTooltip from "@/components/UI/Base/BaseTooltip/BaseTooltip";
+import { FC } from "react";
+
+const ExclamationDashboardInputIcon: FC = (): JSX.Element => {
+  return (
+    <>
+      <BaseTooltip title="مثال: معمار، طراح داخلی و ..." placement="top-left">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.93935 6.00065C9.78261 5.5551 9.47325 5.17939 9.06605 4.94007C8.65884 4.70076 8.18009 4.61328 7.71456 4.69313C7.24904 4.77297 6.8268 5.015 6.52263 5.37634C6.21846 5.73767 6.05198 6.195 6.05268 6.66732C6.05268 8.00065 8.05268 8.66732 8.05268 8.66732M7.99935 11.334H7.99268M1.33268 8.00065C1.33268 11.6826 4.31745 14.6673 7.99935 14.6673C11.6812 14.6673 14.666 11.6826 14.666 8.00065C14.666 4.31875 11.6812 1.33398 7.99935 1.33398C4.31745 1.33398 1.33268 4.31875 1.33268 8.00065Z"
+            stroke="#616161"
+            strokeWidth="1.33333"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </BaseTooltip>
+    </>
+  );
+};
+
+export default ExclamationDashboardInputIcon;

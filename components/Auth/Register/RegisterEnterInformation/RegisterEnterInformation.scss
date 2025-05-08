@@ -1,0 +1,38 @@
+.new-register--info {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    margin-bottom: 2.4rem;
+
+    &--name,
+    &--password {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.6rem;
+      width: 100%;
+    }
+
+    &--first-name,
+    &--last-name,
+    &--pass,
+    &--repeat {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+}
+
+@media (min-width: $xl) {
+  .new-register--info {
+    &__form {
+      margin-bottom: 3rem;
+    }
+  }
+}

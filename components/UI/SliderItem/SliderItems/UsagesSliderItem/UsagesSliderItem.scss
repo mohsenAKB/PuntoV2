@@ -1,0 +1,27 @@
+.usages-slider-item {
+  border: 1px solid #dde1e6;
+  color: #f2f4f8;
+  background: #f3f4f8;
+  border-radius: 4px;
+  cursor: pointer;
+  &__link {
+    display: flex;
+    flex-direction: column;
+
+    &--img {
+      width: 100%;
+      // object-fit: cover;
+      height: 120px;
+      border-radius: 4px;
+    }
+
+    &--heading {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      text-align: center;
+      color: #21272a;
+      padding: 12px;
+    }
+  }
+}

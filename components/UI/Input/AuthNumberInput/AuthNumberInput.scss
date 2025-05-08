@@ -1,0 +1,20 @@
+.auth-input-number {
+  background-color: $authInputBackground;
+  color: $authInputColor;
+  border: 1px solid $authInputBorderColor;
+  font-size: 14px;
+  height: 45px;
+  border-radius: 8px;
+
+  &--danger {
+    border-color: $primary;
+    border-width: 2px;
+  }
+}
+
+@media (min-width: $md) {
+  .auth-input-number {
+    font-size: 16px;
+    height: 50px;
+  }
+}

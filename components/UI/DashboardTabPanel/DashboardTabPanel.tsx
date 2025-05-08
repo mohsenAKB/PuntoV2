@@ -1,4 +1,4 @@
-import { FC, JSX, ReactNode, useMemo } from "react";
+import { FC, ReactNode, useMemo } from "react";
 import BaseTabs, { BaseTabsProps } from "../Base/BaseTabs/BaseTabs";
 import BaseTab from "../Base/BaseTabs/BaseTab/BaseTab";
 import classNames from "classnames";

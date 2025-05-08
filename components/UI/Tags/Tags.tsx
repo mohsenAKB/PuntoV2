@@ -1,11 +1,11 @@
-import { Itag } from "@/@types/entities/tag";
 import classNames from "classnames";
-import React, { FC, JSX } from "react";
+import Link from "next/link";
+import React, { FC } from "react";
 
 export interface TagsProps {
   className?: string;
   blackType: boolean;
-  tag: Itag;
+  tag: {};
   onClick?: () => void;
 }
 
@@ -24,7 +24,7 @@ const Tags: FC<TagsProps> = ({
         className
       )}
     >
-      {tag.name}
+      {tag.title}
     </span>
   );
 };

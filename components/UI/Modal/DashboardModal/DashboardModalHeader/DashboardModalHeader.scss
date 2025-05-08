@@ -1,0 +1,60 @@
+.dashboard-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+
+  &__title {
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  &__close {
+    display: flex;
+    width: 15px;
+    height: 15px;
+
+    svg {
+      path {
+        transition: fill ease-out 100ms;
+        fill: rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      svg {
+        path {
+          transition: fill ease-in 100ms;
+          fill: #000000;
+        }
+      }
+    }
+  }
+
+  &__container {
+    padding: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: $sm) {
+  .dashboard-modal-header {
+    &__title {
+      font-size: 2rem;
+      color: rgba(0, 0, 0, 0.8);
+    }
+
+    &__container {
+      padding: 30px;
+    }
+
+    &__close {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

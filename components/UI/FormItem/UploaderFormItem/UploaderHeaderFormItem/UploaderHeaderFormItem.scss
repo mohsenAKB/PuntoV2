@@ -1,0 +1,10 @@
+@import "./UploaderTitleFormItem/UploaderTitleFormItem.scss";
+@import "./UploaderDescriptionFormItem/UploaderDescriptionFormItem.scss";
+
+.uploader-header-form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 16px;
+  border-bottom: 1px solid $uploaderBorderColor;
+}

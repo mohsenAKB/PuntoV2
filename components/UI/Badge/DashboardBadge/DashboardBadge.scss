@@ -1,0 +1,31 @@
+.dashboard-badge {
+  padding: 7px;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-inline: 0.5rem;
+  text-align: center;
+  overflow: hidden;
+
+  &--info {
+    color: $uploaderPrimaryBackgroundColor;
+    background-color: rgba($uploaderPrimaryBackgroundColor, 0.1);
+  }
+
+  &--warning {
+    color: $warning;
+    background-color: rgba($warning, 0.3);
+  }
+
+  &--danger {
+    color: $danger;
+    background-color: rgba($danger, 0.3);
+  }
+
+  &--success {
+    color: $success;
+    background-color: rgba($success, 0.3);
+  }
+}

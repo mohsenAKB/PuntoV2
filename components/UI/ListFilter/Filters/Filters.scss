@@ -1,0 +1,16 @@
+@import "./TotalFiltersItem/TotalFiltersItem.scss";
+@import "./FilterItem/FilterItem.scss";
+
+.list-filter-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: $sm) {
+  .list-filter-items {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

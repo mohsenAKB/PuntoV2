@@ -1,0 +1,35 @@
+@import "./UploaderHeaderFormItem/UploaderHeaderFormItem.scss";
+
+.uploader-form-item {
+
+  border: 1px solid $uploaderBorderColor;
+
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--half-width {
+    width: 50%;
+  }
+
+  &--spaced {
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: $sm) {
+  .uploader-form-item {
+    &--spaced {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (min-width: $md) {
+  .uploader-form-item {}
+}
+
+@media (min-width: $lg) {
+  .uploader-form-item {}
+}

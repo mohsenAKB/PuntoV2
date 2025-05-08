@@ -1,0 +1,10 @@
+.new-register--phone-number {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.4rem;
+    margin-bottom: 1.6rem;
+    font-family: $secondary-font !important;
+  }
+}

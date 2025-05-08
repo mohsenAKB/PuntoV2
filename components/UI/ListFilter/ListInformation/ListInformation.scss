@@ -1,0 +1,22 @@
+@import "./Orders/Orders.scss";
+@import "./ListPagination/ListPagination.scss";
+
+.filter-list-information {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: $sm) {
+  .filter-list-information {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: $xl) {
+  .filter-list-information {
+    flex-direction: row;
+    align-items: center;
+  }
+}

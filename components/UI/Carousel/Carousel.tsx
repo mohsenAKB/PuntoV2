@@ -1,46 +1,29 @@
-import React, { FC, JSX } from "react";
-import CarouselWrapper from "./CarouselWrapper/CarouselWrapper";
-import { IMaterial } from "@/@types/entities/material";
-import { ISmallResidentialSpace } from "@/@types/entities/small-residential-space";
-import { IStyle } from "@/@types/entities/style";
-import { IUsage } from "@/@types/entities/usage";
-import TopCard, { TopCardProps } from "../Cards/TopCard/TopCard";
-
+import React, { FC, ReactNode } from "react";
+import Items from "./Items/Items";
+import Link from "next/link";
+import HeadingSection from "../HeadingSection/HeadingSection";
 
 export interface CarouselProps {
-  entity: string;
-  data: IUsage[] | IStyle[] | IMaterial[] | ISmallResidentialSpace[];
-  onClick: (id: number) => void;
-  isDesigner?: boolean;
-  isJob?: boolean;
+  heading: string;
+  link: string;
+  anchorText: string;
+  items: [];
+  children: ReactNode;
 }
 
-const Carousel: FC<CarouselProps & TopCardProps> = ({
-  anchorText,
+const Carousel: FC<CarouselProps> = ({
   heading,
   link,
-  tooltipDescription,
-  entity,
-  data,
-  onClick,
-  isDesigner,
-  isJob,
+  items,
+  anchorText,
+  children,
 }): JSX.Element => {
   return (
-    <section className="carousel">
-      <TopCard
-        anchorText={anchorText}
-        heading={heading}
-        link={link}
-        tooltipDescription={tooltipDescription}
-      />
-      <CarouselWrapper
-        entity={entity}
-        data={data}
-        onClick={onClick}
-        isDesigner={isDesigner}
-        isJob={isJob}
-      />
+    <section className="usages-slider">
+      <div className="usages-slider__details">
+        <HeadingSection anchorText={anchorText} heading={heading} link={link} />
+      </div>
+      <Items items={items}>{children}</Items>
     </section>
   );
 };

@@ -1,0 +1,23 @@
+.custom-date-picker {
+  @extend .dashboard-input__input;
+
+  &--danger {
+    outline: 2px solid $primary !important;
+  }
+}
+
+.tether-element {
+  z-index: 100;
+
+  .calendarContainer {
+    .dayWrapper.selected {
+      button {
+        background-color: $uploaderPrimaryBackgroundColor;
+      }
+    }
+
+    .calendarButton.selectToday {
+      background-color: $uploaderPrimaryBackgroundColor;
+    }
+  }
+}

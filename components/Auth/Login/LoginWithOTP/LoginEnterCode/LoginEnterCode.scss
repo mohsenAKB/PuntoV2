@@ -1,0 +1,20 @@
+.new-login--otp {
+  &__edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+}
+
+@media (min-width: $xl) {
+  .new-login--otp {
+    &__form {
+      gap: 3rem;
+    }
+  }
+}

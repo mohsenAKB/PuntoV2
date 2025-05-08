@@ -1,0 +1,44 @@
+.auth-form-item {
+  width: 340px;
+
+
+  &--spaced {
+    margin-top: 30px;
+  }
+
+  &__message {
+    color: $primary;
+    right: 0;
+  }
+}
+
+@media (min-width: $sm) {
+  .auth-form-item {
+    width: 400px;
+
+    &--spaced {
+      margin-top: 35px;
+    }
+
+    &__message {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media (min-width: $md) {
+  .auth-form-item {
+    width: 450px;
+
+    &__message {
+      font-size: 1.4rem;
+    }
+
+  }
+}
+
+@media (min-width: $lg) {
+  .auth-form-item {
+    width: 520px;
+  }
+}

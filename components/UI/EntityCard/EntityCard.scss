@@ -1,0 +1,29 @@
+.entity-card {
+  border: 1px solid #dde1e6;
+  color: #f2f4f8;
+  background: #F3F4F8;
+  border-radius: 4px;
+  width: fit-content;
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+
+    &--img {
+      position: relative !important;
+      width: 285px !important;
+      object-fit: cover;
+      height: 195px !important;
+      border-radius: 4px;
+    }
+
+    &--heading {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      text-align: center;
+      color: #21272a;
+      padding: 12px;
+    }
+  }
+}

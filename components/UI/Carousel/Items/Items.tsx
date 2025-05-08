@@ -1,0 +1,63 @@
+import React, { FC, ReactNode, useMemo } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+import NextButton from "./NextButton/NextButton";
+import PrevButton from "./PrevButton/PrevButton";
+
+export interface ItemsProps {
+  children: ReactNode;
+  items: [];
+}
+
+const Items: FC<ItemsProps> = ({ children, items }): JSX.Element => {
+  
+  const renderedItems = useMemo(() => {
+    return items.map((item) => (
+      <SwiperSlide key={item.id}>{children}</SwiperSlide>
+    ));
+  }, [items]);
+
+  return (
+    <div className="usages-slider-items">
+      <Swiper
+        slidesPerView={2}
+        breakpoints={{
+          640: {
+            slidesPerView: 3,
+          },
+          768: {
+            slidesPerView: 4,
+          },
+          1024: {
+            slidesPerView: 5,
+          },
+          1200: {
+            slidesPerView: 7,
+          },
+          1568: {
+            slidesPerView: 4,
+          },
+          2500: {
+            slidesPerView: 12,
+          },
+        }}
+        spaceBetween={16}
+        modules={[Navigation]}
+        className="usages-slider-items__swiper"
+        navigation={{
+          enabled: true,
+          nextEl: ".swiper-button-next.swiper-button-next--usages",
+          prevEl: ".swiper-button-prev.swiper-button-prev--usages",
+        }}
+      >
+        {renderedItems}
+
+        <NextButton />
+        <PrevButton />
+      </Swiper>
+    </div>
+  );
+};
+
+export default Items;

@@ -1,0 +1,29 @@
+.form-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: $secondary-font !important;
+
+  &__label {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: $newHighEmphasis;
+    line-height: 2.4rem;
+    font-family: $secondary-font !important;
+
+  }
+
+  &__star {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $newDanger;
+  }
+
+  &__optional {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $newMediumEmphasis;
+    font-family: $secondary-font !important;
+
+  }
+}

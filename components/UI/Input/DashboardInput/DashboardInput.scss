@@ -1,0 +1,64 @@
+.dashboard-input {
+  &__input {
+    background-color: $authInputBackground;
+    outline: 1px solid rgba($dashboardInputBorderColor, 0.22);
+    transition: outline ease 200ms;
+    border-radius: 4px;
+    padding: 14px 16px;
+    font-size: 14px;
+    width: 100%;
+    position: relative;
+
+    &:focus {
+      outline-color: rgba($dashboardInputBorderColor, 0.5) !important;
+    }
+
+    &--exclamation-icon {
+      padding-left: 40px;
+    }
+
+    &--suffix {
+      padding-left: 85px;
+      direction: ltr;
+    }
+  }
+
+  .baseInput {
+    &--danger {
+      outline: 2px solid $primary !important;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+  }
+
+  &__suffix {
+    position: absolute;
+    z-index: 1;
+    left: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px 10px 14px 0;
+    text-align: left;
+    direction: ltr;
+
+    &--text {
+      height: 100%;
+      font-weight: 500;
+      font-size: 14px;
+      padding-left: 0;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid rgba($dashboardInputBorderColor, 0.5);
+      padding-right: 10px;
+    }
+  }
+}

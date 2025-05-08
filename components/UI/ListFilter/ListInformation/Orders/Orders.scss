@@ -1,0 +1,26 @@
+.list-filter-orders {
+  display: flex;
+  align-items: center;
+
+  &__filter {
+    &--label {
+      white-space: nowrap;
+      color: #21272A;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    &--select {
+      .designer-profile-filter-input {
+        padding-left: 8px;
+        padding-right: 8px;
+
+        &__placeholder {
+          color: #21272A;
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.new-login--phone {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  &__action-buttons {
+    display: flex;
+    gap: 0.8rem;
+  }
+}

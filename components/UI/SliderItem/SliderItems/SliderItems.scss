@@ -1,0 +1,44 @@
+@import "./UsagesSliderItem/UsagesSliderItem.scss";
+@import "./LastIdeasItem/LastIdeasItem.scss";
+@import "swiper/css";
+
+.usages-slider-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 56px;
+  margin-top: 1rem;
+  width: 100%;
+  overflow: hidden;
+  &__swiper {
+    width: 100vw;
+  }
+}
+.swiper {
+  .swiper-button-next.swiper-button-next--usages {
+    background: #f2f4f8;
+    width: 32px;
+    height: 32px;
+    border-radius: 38px;
+    left: 9rem;
+
+    &::after {
+      content: url("../../../../public/images/arrowL&R.svg");
+      position: absolute;
+      top: -14px;
+    }
+  }
+  .swiper-button-prev--usages.swiper-button-prev--usages {
+    background: #f2f4f8;
+    width: 32px;
+    height: 32px;
+    border-radius: 38px;
+    transform: rotate(180deg);
+
+    &::after {
+      content: url("../../../../public/images/arrowL&R.svg");
+      position: absolute;
+      top: -14px;
+    }
+  }
+}

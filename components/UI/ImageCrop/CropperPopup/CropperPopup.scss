@@ -1,0 +1,21 @@
+.cropper-popup {
+  &__modal {
+
+
+    .dashboard-modal {
+
+      &__children {
+        margin: 1rem;
+        max-width: 70rem;
+        min-width: 40rem;
+      }
+
+      &-header {
+        &__container {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+
+}

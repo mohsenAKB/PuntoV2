@@ -1,6 +1,7 @@
 import Link from "next/link";
-import React, { FC, JSX } from "react";
+import React, { FC } from "react";
 import BaseTooltip from "../../Base/BaseTooltip/BaseTooltip";
+import { CarouselProps } from "@/components/Carousel/Carousel";
 export interface TopCardProps {
   heading: string;
   anchorText: string;

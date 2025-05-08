@@ -1,0 +1,35 @@
+@import "./AuthenticationAlert/AuthenticationAlert.scss";
+
+.base-alert
+{
+    border: 1px solid ;
+    border-radius:12px;
+    color: #510B06;
+    height: 4rem;
+    margin-block: 2.4rem;
+    
+    &--error 
+    {
+        border: 1px solid #FEF2F1;
+        color: #510B06;
+    }
+    .ant-alert-message 
+    {
+        color: #510B06 !important;
+    }
+
+}
+
+.authentication-alert-error
+{
+    border: 1px solid #F24E42;
+}
+
+.authentication-alert-error .ant-alert-message
+{
+    color: #510B06 !important;
+    font-size: 13px;
+    font-family: $secondary-font !important;
+
+}
+

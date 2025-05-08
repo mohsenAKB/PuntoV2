@@ -1,0 +1,70 @@
+.dashboard-form-item {
+  width: 100% !important;
+  cursor: text;
+  margin-top: 10px;
+  position: relative;
+
+  &--spaced {
+    margin-top: 35px;
+  }
+
+  &__message {
+    color: red;
+    right: 0;
+  }
+
+  label {
+    position: absolute;
+    z-index: 10;
+    top: -8px;
+    background-image: linear-gradient(to top, #fafafa 50%, #fff);
+    -webkit-transform: translateY(-10%) translateX(-12.5px);
+    transform: translateY(-10%) translateX(-12.5px);
+    transform-origin: right;
+    color: $dashboardFormItemLabelColor;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 0 15px;
+  }
+
+  &--danger {
+    label {
+      color: $primary;
+    }
+  }
+
+  &__required {
+    padding-right: 5px;
+    color: $danger;
+  }
+}
+
+@media (min-width: $sm) {
+  .dashboard-form-item {
+    width: 400px;
+
+    &--spaced {
+      margin-top: 45px;
+    }
+
+    &__message {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media (min-width: $md) {
+  .dashboard-form-item {
+    width: 450px;
+
+    &__message {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media (min-width: $lg) {
+  .dashboard-form-item {
+    width: 520px;
+  }
+}

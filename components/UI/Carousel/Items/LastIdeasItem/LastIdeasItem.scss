@@ -1,0 +1,26 @@
+.last-ideas {
+  &__link {
+    .last-ideas__card {
+      border-radius: 4px;
+      @extend .flex-col;
+      gap: 6px;
+      &__cover {
+        width: 100%;
+        height: 20rem;
+      }
+      &__body {
+        @extend .flex-center-baseline;
+        gap: 5px;
+        &--img {
+          width: 41.25px;
+          height: 41.25px;
+          border-radius: 10rem;
+        }
+        &--name {
+          font-size: 1.4rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

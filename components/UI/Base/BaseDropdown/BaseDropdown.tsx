@@ -1,6 +1,5 @@
 import {
   FC,
-  JSX,
   MouseEventHandler,
   ReactNode,
   useEffect,
@@ -10,10 +9,10 @@ import {
 } from 'react';
 import BasePortal from '../BasePortal/BasePortal';
 import classNames from 'classnames';
+import useComponent from '../../Utilities/hooks/use-component';
 import { InputStatus } from '@/@types/ui/input-status';
 import BaseDropDownItems from './BaseDropDownItems/BaseDropDownItems';
 import { IDropDownItem } from './@types/DropDownItem';
-import { useComponent } from '@/hook/use-component';
 
 interface IProps {
   className?: string;

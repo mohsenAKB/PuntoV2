@@ -1,0 +1,16 @@
+@import "./Filters/Filters.scss";
+@import "./ListInformation/ListInformation.scss";
+
+.list-filter {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: $xl) {
+  .list-filter {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

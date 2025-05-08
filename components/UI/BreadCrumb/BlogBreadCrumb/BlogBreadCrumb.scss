@@ -1,0 +1,15 @@
+.single-blog__breadCrumb {
+  width: 100%;
+  &__wrapper {
+    @extend .base-breadcrumb__wrapper;
+    align-items: center
+  }
+  &__item {
+    @extend .base-breadcrumb__item;
+     a {
+      padding-right: 0.5rem;
+      color: #2196f3;
+      font-size: 1.3rem;
+    }
+  }
+}

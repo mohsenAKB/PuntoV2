@@ -1,8 +1,9 @@
-import React, { FC, JSX } from "react";
+import React, { FC } from "react";
+import BaseDropDown from "../../Base/BaseDropdown/BaseDropdown";
 import { useRouter } from "next/navigation";
 import { URL } from "@/constant/url";
-import useAuth from "@/hook/use-auth";
-import BaseDropDown from "../../Base/BaseDropdown/BaseDropdown";
+import LogoutPage from "@/pages/auth/logout";
+import useAuth from "@/hook/refactor/use-auth";
 
 const UserProfile: FC = (): JSX.Element => {
   const router = useRouter();
