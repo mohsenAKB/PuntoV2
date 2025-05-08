@@ -1,10 +1,12 @@
+'use client';
+
 import AuthenticationButton from "@/components/Shared/Button/AuthenticationButton/AuthenticationButton";
 import DividerLine from "@/components/Shared/DividerLine/DividerLine";
 import AuthCountdownTimer from "@/components/Shared/layouts/AuthLayout/AuthCountdownTimer/AuthCountdownTimer";
 import AuthEditPhoneNumberOrEmail from "@/components/Shared/layouts/AuthLayout/AuthEditPhoneNumberOrEmail/AuthEditPhoneNumberOrEmail";
 import AuthSubHeader from "@/components/Shared/layouts/AuthLayout/AuthSubHeader/AuthSubHeader";
 import AuthenticationPassCodeInput from "@/components/Shared/PassCodeInput/AuthenticationPassCodeInput/AuthenticationPassCodeInput";
-import React, { FC, useEffect, useMemo, useState } from "react";
+import React, { FC, JSX, useEffect, useMemo, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -12,24 +14,26 @@ import {
   ILoginEnterCodeSchemaValidation,
   LoginEnterCodeSchemaValidation,
 } from "./schema-validation";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { URL } from "@/constant/url";
-import { useSearchParams } from "next/navigation";
 import useRequest from "@/hook/use-request";
-import { IVerifyOtpBody } from "@/@types/Request/verify-body";
-import { SendOtpBody } from "@/@types/Request/send-otp-body";
-import { SendOtpSchemaResponse } from "@/@types/Response/refactor/send-otp";
+import { SendOtpSchemaResponse } from "@/@types/response/refactor/send-otp";
 import { API } from "@/constant/api";
 import { ILoginVerifyOtpPhoneNumberRequest } from "@/@types/Request/Auth/login-verify-otp-phone-number";
-import { IList } from "@/@types/Response/list";
-import { ILoginResponse } from "@/@types/Response/refactor/login-response";
+import { IList } from "@/@types/response/list";
+import { ILoginResponse } from "@/@types/response/refactor/login-response";
 import useAuth from "@/hook/use-auth";
 import useLink from "@/hook/use-link";
 import { ILoginBody } from "@/@types/Request/login-body";
 import { ILoginSendOtpPhoneNumberRequest } from "@/@types/Request/Auth/login-send-otp-phone-number";
 import RequestInstanceNames from "@/utils/request/types/request-instances.enum";
 import AuthenticationAlert from "@/components/Shared/Alert/AuthenticationAlert/AuthenticationAlert";
-import useSavePath from "@/hook/refactor/use-save-path";
+import useSavePath from "@/hook/use-save-path";
+
+interface ILoginEnterCodeParams {
+  "phone-number": string
+  expire: string
+}
 
 const LoginEnterCode: FC = (): JSX.Element => {
   const [expiresIn, setExpiresIn] = useState<number | null>(null);
@@ -38,7 +42,8 @@ const LoginEnterCode: FC = (): JSX.Element => {
   const { loginUser } = useAuth();
   const { redirect } = useLink();
   const { getSavedPath, clearSavedPath } = useSavePath();
-  console.log(getSavedPath, "getSavedPath");
+  const { getQueryParams } = useLink()
+  const params = getQueryParams<ILoginEnterCodeParams>()
 
   const verifyOtpRequest = useRequest<
     IList<ILoginResponse>,
@@ -61,7 +66,7 @@ const LoginEnterCode: FC = (): JSX.Element => {
   }, [verifyOtpRequest.errorData]);
 
   const phoneNumber = useMemo<number>(() => {
-    return +(router.query["phone-number"] as string);
+    return +(params["phone-number"] as string);
   }, [router]);
 
   const onSubmit = async (values: ILoginEnterCodeForm): Promise<void> => {
@@ -111,10 +116,10 @@ const LoginEnterCode: FC = (): JSX.Element => {
   };
 
   const setInitialExpiresIn = (): void => {
-    setExpiresIn(Number(router.query["expire"] as string) || 0);
+    setExpiresIn(Number(params["expire"] as string) || 0);
   };
 
-  useEffect(setInitialExpiresIn, [router]);
+  useEffect(setInitialExpiresIn, [params]);
 
   return (
     <section className="new-login--otp">

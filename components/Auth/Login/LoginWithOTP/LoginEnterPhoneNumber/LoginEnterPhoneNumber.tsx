@@ -1,3 +1,5 @@
+'use client';
+
 import AuthenticationButton from "@/components/Shared/Button/AuthenticationButton/AuthenticationButton";
 import AuthenticationSecondaryButton from "@/components/Shared/Button/AuthenticationSecondaryButton/AuthenticationSecondaryButton";
 import DividerLine from "@/components/Shared/DividerLine/DividerLine";
@@ -5,7 +7,7 @@ import FormItem from "@/components/Shared/FormItem/FormItem";
 import AuthenticationInput from "@/components/Shared/Input/AuthenticationInput/AuthenticationInput";
 import AuthFooterLink from "@/components/Shared/layouts/AuthLayout/AuthFooterLink/AuthFooterLink";
 import AuthSubHeader from "@/components/Shared/layouts/AuthLayout/AuthSubHeader/AuthSubHeader";
-import React, { FC, useMemo, useState } from "react";
+import React, { FC, JSX, useMemo, useState } from "react";
 import {
   ILoginEnterPhoneNumberForm,
   ILoginEnterPhoneNumberSchemaValidation,
@@ -18,19 +20,19 @@ import useLink from "@/hook/use-link";
 import useRequest from "@/hook/use-request";
 import { API } from "@/constant/api";
 import { ILoginBody } from "@/@types/Request/login-body";
-import { SendOtpSchemaResponse } from "@/@types/Response/refactor/send-otp";
+import { SendOtpSchemaResponse } from "@/@types/response/refactor/send-otp";
 import { ILoginSendOtpPhoneNumberRequest } from "@/@types/Request/Auth/login-send-otp-phone-number";
 import AuthenticationAlert from "@/components/Shared/Alert/AuthenticationAlert/AuthenticationAlert";
 import RequestInstanceNames from "@/utils/request/types/request-instances.enum";
 
 const LoginEnterPhoneNumber: FC = (): JSX.Element => {
   const { redirect } = useLink();
-  const { post, errorData } = useRequest<SendOtpSchemaResponse<ILoginBody>, ILoginSendOtpPhoneNumberRequest>({instanceName:RequestInstanceNames.NewAuth})
+  const { post, errorData } = useRequest<SendOtpSchemaResponse<ILoginBody>, ILoginSendOtpPhoneNumberRequest>({ instanceName: RequestInstanceNames.NewAuth })
 
   // const [errorText , setErrorText] =useState<string | undefined>(errorData?.messages[0])
-  const errorText =useMemo(() =>{
+  const errorText = useMemo(() => {
     return errorData?.messages[0]
-  } ,[errorData])
+  }, [errorData])
   const { control, handleSubmit } =
     useForm<ILoginEnterPhoneNumberSchemaValidation>({
       defaultValues: {
@@ -61,15 +63,15 @@ const LoginEnterPhoneNumber: FC = (): JSX.Element => {
     redirect(URL.AuthLoginStatic);
   };
 
-  const errorHandling = useMemo<JSX.Element | undefined>(()=>{
+  const errorHandling = useMemo<JSX.Element | undefined>(() => {
     if (errorText) {
       return (
-        <AuthenticationAlert  type="error" message={errorText} />
+        <AuthenticationAlert type="error" message={errorText} />
       )
     }
 
 
-  },[errorText])
+  }, [errorText])
   return (
     <section className="new-login--phone">
       <AuthSubHeader>شماره تلفن خود را وارد کنید.</AuthSubHeader>
@@ -110,7 +112,7 @@ const LoginEnterPhoneNumber: FC = (): JSX.Element => {
           ></AuthFooterLink>
         </div>
       </div>
-      
+
     </section>
   );
 };

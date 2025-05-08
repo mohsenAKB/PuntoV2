@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, JSX, ReactNode } from "react";
 import SmallView from "./SmallView/SmallView";
 import AuthLogo from "./AuthLogo/AuthLogo";
 import AuthHeader from "./AuthHeader/AuthHeader";
