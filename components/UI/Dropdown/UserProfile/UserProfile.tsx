@@ -3,7 +3,7 @@ import BaseDropDown from "../../Base/BaseDropdown/BaseDropdown";
 import { useRouter } from "next/navigation";
 import { URL } from "@/constant/url";
 import LogoutPage from "@/pages/auth/logout";
-import useAuth from "@/hook/refactor/use-auth";
+import useAuth from "@/hook/use-auth";
 
 const UserProfile: FC = (): JSX.Element => {
   const router = useRouter();

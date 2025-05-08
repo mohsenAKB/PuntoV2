@@ -29,7 +29,7 @@ import { IProvince } from "@/@types/entity/refactor/province";
 import { IServiceLocation } from "@/@types/entity/refactor/service_location";
 import { ISkill } from "@/@types/entity/refactor/skill";
 import { IUserAuthenticationsInformation } from "@/@types/entity/refactor/user";
-import useAuth from "@/hook/refactor/use-auth";
+import useAuth from "@/hook/use-auth";
 import AuthenticationAlert from "@/components/Shared/Alert/AuthenticationAlert/AuthenticationAlert";
 import RequestInstanceNames from "@/utils/request/types/request-instances.enum";
 import useSavePath from "@/hook/refactor/use-save-path";

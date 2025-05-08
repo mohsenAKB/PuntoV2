@@ -57,7 +57,7 @@ const BaseDropDownItems: FC<IProps> = ({
   const itemsElement = useMemo(() => {
     if (!items.length) return noData;
 
-    return items.map((item) => (
+    return items?.map((item) => (
       <BaseDropDownItem
         className={className}
         onClick={() => handleItemClick(item)}

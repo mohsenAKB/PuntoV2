@@ -18,7 +18,7 @@ import {
 } from "./schema-validation";
 import { URL } from "@/constant/url";
 import useLink from "@/hook/use-link";
-import useAuth from "@/hook/refactor/use-auth";
+import useAuth from "@/hook/use-auth";
 import useRequest from "@/hook/use-request";
 import { ILoginBody } from "@/@types/Request/login-body";
 import { ILoginResponse } from "@/@types/Response/refactor/login-response";
@@ -69,7 +69,7 @@ const LoginWithPassword: FC = (): JSX.Element => {
         ...user_profile!,
         auth: auth!,
       });
-      
+
       if (getSavedPath()) {
         redirect(getSavedPath() as URL);
         clearSavedPath();

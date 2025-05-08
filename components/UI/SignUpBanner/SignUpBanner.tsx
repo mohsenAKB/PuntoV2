@@ -1,16 +1,16 @@
 import SignUpModal from "@/components/modal/signUpModal";
 import { URL } from "@/constant/url";
-import useAuth from "@/hook/refactor/use-auth";
+import useAuth from "@/hook/use-auth";
 import useSavePath from "@/hook/refactor/use-save-path";
 import useLink from "@/hook/use-link";
 import Image from "next/image";
 import React, { FC, useState } from "react";
 
-export interface SignUpBannerProps{
-  path:string
+export interface SignUpBannerProps {
+  path: string;
 }
 
-const SignUpBanner: FC<SignUpBannerProps> = ({path}): JSX.Element | null => {
+const SignUpBanner: FC<SignUpBannerProps> = ({ path }): JSX.Element | null => {
   // const [showAuthModal, setShowAuthModal] = useState<boolean>(false);
   const { savePath } = useSavePath();
   const { redirect } = useLink();

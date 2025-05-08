@@ -23,7 +23,7 @@ import { API } from "@/constant/api";
 import { ILoginVerifyOtpPhoneNumberRequest } from "@/@types/Request/Auth/login-verify-otp-phone-number";
 import { IList } from "@/@types/Response/list";
 import { ILoginResponse } from "@/@types/Response/refactor/login-response";
-import useAuth from "@/hook/refactor/use-auth";
+import useAuth from "@/hook/use-auth";
 import useLink from "@/hook/use-link";
 import { ILoginBody } from "@/@types/Request/login-body";
 import { ILoginSendOtpPhoneNumberRequest } from "@/@types/Request/Auth/login-send-otp-phone-number";

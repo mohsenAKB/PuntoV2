@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import useUser from "@/hook/use-user";
 import { BaseBackURL } from "@/constant";
 import { defaultURL } from "@/constant/url";
-import useAuth from "@/hook/refactor/use-auth";
+import useAuth from "@/hook/use-auth";
 
 const ClientProfile: FC = (): JSX.Element => {
   const { user } = useAuth();

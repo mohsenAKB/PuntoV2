@@ -5,11 +5,11 @@ import Search from "@/components/UI/Search/Search";
 import { useSelector } from "react-redux";
 import useUser from "@/hook/use-user";
 import { useRouter } from "next/navigation";
-import useAuth from "@/hook/refactor/use-auth";
+import useAuth from "@/hook/use-auth";
 
 const MobileHeader: FC = (): JSX.Element | null => {
   const [mounted, setMounted] = useState(false);
-  const {isAuthenticated , logoutUser} = useAuth();
+  const { isAuthenticated, logoutUser } = useAuth();
   // const { logoutUser } = useUser();
 
   const router = useRouter();
@@ -37,8 +37,7 @@ const MobileHeader: FC = (): JSX.Element | null => {
           ClassName="mobile-header__btn"
           onClick={logoutHandler}
         >
-          jhj
-          خروج
+          jhj خروج
         </HeaderButton>
       ) : (
         <HeaderButton

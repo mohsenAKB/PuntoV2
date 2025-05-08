@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useMemo } from "react";
+import React, { FC, JSX, ReactNode, useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
@@ -13,7 +13,7 @@ export interface ItemsProps {
 const Items: FC<ItemsProps> = ({ children, items }): JSX.Element => {
   
   const renderedItems = useMemo(() => {
-    return items.map((item) => (
+    return items?.map((item) => (
       <SwiperSlide key={item.id}>{children}</SwiperSlide>
     ));
   }, [items]);
