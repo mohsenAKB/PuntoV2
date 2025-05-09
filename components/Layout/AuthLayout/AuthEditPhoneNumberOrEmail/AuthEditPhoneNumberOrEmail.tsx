@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { FC } from "react";
+import React, { FC, JSX } from "react";
 
 type AuthEditPhoneNumberOrEmailProps = {
   href: string;

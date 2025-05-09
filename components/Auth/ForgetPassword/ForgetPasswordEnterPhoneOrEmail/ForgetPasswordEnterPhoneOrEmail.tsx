@@ -1,9 +1,11 @@
+"use client";
+
 import AuthenticationButton from "@/components/Shared/Button/AuthenticationButton/AuthenticationButton";
 import DividerLine from "@/components/Shared/DividerLine/DividerLine";
 import FormItem from "@/components/Shared/FormItem/FormItem";
 import AuthenticationInput from "@/components/Shared/Input/AuthenticationInput/AuthenticationInput";
 import AuthSubHeader from "@/components/Shared/layouts/AuthLayout/AuthSubHeader/AuthSubHeader";
-import React, { FC, useMemo } from "react";
+import React, { FC, JSX, useMemo } from "react";
 import {
   IForgetPasswordEnterPhoneOrEmailForm,
   ForgetPasswordEnterPhoneOrEmailSchemaValidation,
@@ -20,7 +22,7 @@ import RequestInstanceNames from "@/utils/request/types/request-instances.enum";
 
 const ForgetPasswordEnterPhoneOrEmail: FC = (): JSX.Element => {
   const { redirect } = useLink();
-  const request =useRequest({instanceName:RequestInstanceNames.NewAuth})
+  const request = useRequest({ instanceName: RequestInstanceNames.NewAuth });
   const { control, handleSubmit } =
     useForm<IForgetPasswordEnterPhoneOrEmailSchemaValidation>({
       defaultValues: {
@@ -29,37 +31,41 @@ const ForgetPasswordEnterPhoneOrEmail: FC = (): JSX.Element => {
       resolver: zodResolver(ForgetPasswordEnterPhoneOrEmailSchemaValidation),
     });
 
-  const onSubmit = async(values: IForgetPasswordEnterPhoneOrEmailForm): Promise<void> => {
-    const { phone_number } = values;    
+  const onSubmit = async (
+    values: IForgetPasswordEnterPhoneOrEmailForm
+  ): Promise<void> => {
+    const { phone_number } = values;
     const isPhoneNumber = /^\d+$/.test(phone_number);
     const otpCheckCodeUrl = isPhoneNumber
       ? `${
           URL.AuthForgetPasswordOtpEnterCode
         }?phone-number=${encodeURIComponent(phone_number)}`
       : `${URL.AuthForgetPasswordOtpEnterCode}?email=${encodeURIComponent(
-        phone_number
+          phone_number
         )}`;
-    const result =await request.post(API.EnterPhoneOtp , values)
-    console.log(result,"result");
-    
+    const result = await request.post(API.EnterPhoneOtp, values);
+    console.log(result, "result");
+
     redirect(otpCheckCodeUrl);
   };
-    const errorText =useMemo(() =>{
-        return request.errorData?.messages[0]
-      } ,[request.errorData])
-      const errorHandling = useMemo<JSX.Element | undefined>(()=>{
-        if (errorText) {
-          return (
-            <AuthenticationAlert  type="error" message={errorText} className="authentication-alert-error"/>
-          )
-        }
-    
-    
-      },[errorText])
+  const errorText = useMemo(() => {
+    return request.errorData?.messages[0];
+  }, [request.errorData]);
+  const errorHandling = useMemo<JSX.Element | undefined>(() => {
+    if (errorText) {
+      return (
+        <AuthenticationAlert
+          type="error"
+          message={errorText}
+          className="authentication-alert-error"
+        />
+      );
+    }
+  }, [errorText]);
   return (
     <section className="new-forget-password--phone-email">
       <AuthSubHeader>
-        برای بازیابی رمز عبور لطفا  شماره تلفن خود را وارد نمایید.
+        برای بازیابی رمز عبور لطفا شماره تلفن خود را وارد نمایید.
       </AuthSubHeader>
       <DividerLine />
       <div className="new-forget-password--phone-email__form">
@@ -74,10 +80,7 @@ const ForgetPasswordEnterPhoneOrEmail: FC = (): JSX.Element => {
               id="phone-number"
               message={error?.message}
             >
-              <AuthenticationInput
-                placeholder="09123456789"
-                {...field}
-              />
+              <AuthenticationInput placeholder="09123456789" {...field} />
             </FormItem>
           )}
         />

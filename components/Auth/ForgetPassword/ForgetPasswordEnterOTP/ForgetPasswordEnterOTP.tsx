@@ -1,10 +1,12 @@
+"use client";
+
 import AuthenticationButton from "@/components/Shared/Button/AuthenticationButton/AuthenticationButton";
 import DividerLine from "@/components/Shared/DividerLine/DividerLine";
 import AuthCountdownTimer from "@/components/Shared/layouts/AuthLayout/AuthCountdownTimer/AuthCountdownTimer";
 import AuthEditPhoneNumberOrEmail from "@/components/Shared/layouts/AuthLayout/AuthEditPhoneNumberOrEmail/AuthEditPhoneNumberOrEmail";
 import AuthSubHeader from "@/components/Shared/layouts/AuthLayout/AuthSubHeader/AuthSubHeader";
 import AuthenticationPassCodeInput from "@/components/Shared/PassCodeInput/AuthenticationPassCodeInput/AuthenticationPassCodeInput";
-import React, { useMemo, useState } from "react";
+import React, { JSX, useMemo } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -12,23 +14,37 @@ import {
   ForgetPasswordEnterOTPSchemaValidation,
   IForgetPasswordEnterOTPSchemaValidation,
 } from "./schema-validation";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { URL } from "@/constant/url";
 import useLink from "@/hook/use-link";
 import useRequest from "@/hook/use-request";
 import { API } from "@/constant/api";
 import { IList } from "@/@types/Response/list";
-import { IVerifyOtpDataResponse } from "@/@types/Response/refactor/verify-otp";
+import { IVerifyOtpDataResponse } from "@/@types/response/refactor/verify-otp";
 import AuthenticationAlert from "@/components/Shared/Alert/AuthenticationAlert/AuthenticationAlert";
 import RequestInstanceNames from "@/utils/request/types/request-instances.enum";
 
+interface IForgetPasswordEnterOTPParams {
+  "phone-number": string;
+  email: string;
+}
+
 const ForgetPasswordEnterOTP = () => {
-  
   const { redirect } = useLink();
   const router = useRouter();
-  const request = useRequest<IList<IVerifyOtpDataResponse>>({instanceName:RequestInstanceNames.NewAuth});
-  const phoneNumber = router.query["phone-number"];
-  const email = router.query["email"];
+  const request = useRequest<IList<IVerifyOtpDataResponse>>({
+    instanceName: RequestInstanceNames.NewAuth,
+  });
+  const { getQueryParams } = useLink();
+  const params = getQueryParams<IForgetPasswordEnterOTPParams>();
+
+  const phoneNumber = useMemo<number>(() => {
+    return +(params["phone-number"] as string);
+  }, [router]);
+
+  const email = useMemo<number>(() => {
+    return +(params["email"] as string);
+  }, [router]);
 
   const displayText = phoneNumber
     ? `کد ورود به شماره ${phoneNumber} ارسال شد.`
@@ -42,30 +58,37 @@ const ForgetPasswordEnterOTP = () => {
       resolver: zodResolver(ForgetPasswordEnterOTPSchemaValidation),
     });
 
-  const onSubmit =async (values: IForgetPasswordEnterOTPForm): Promise<void> => {
-    const reqBody ={
-      phone_number:phoneNumber,
-      otp:values.otp
-    }
-    const result =await request.post(API.verifyOtp,reqBody,)
+  const onSubmit = async (
+    values: IForgetPasswordEnterOTPForm
+  ): Promise<void> => {
+    const reqBody = {
+      phone_number: phoneNumber,
+      otp: values.otp,
+    };
+    const result = await request.post(API.verifyOtp, reqBody);
     if (result?.success) {
-      localStorage.setItem("forgetPasswordToken",result.data.auth.access_token)
+      localStorage.setItem(
+        "forgetPasswordToken",
+        result.data.auth.access_token
+      );
       redirect(URL.AuthForgetPasswordEnterNewPassword);
     }
   };
 
-      const errorText =useMemo(() =>{
-          return request.errorData?.messages[0]
-        } ,[request.errorData])
-        const errorHandling = useMemo<JSX.Element | undefined>(()=>{
-          if (errorText) {
-            return (
-              <AuthenticationAlert  type="error" message={errorText} className="authentication-alert-error"/>
-            )
-          }
-      
-      
-        },[errorText])
+  const errorText = useMemo(() => {
+    return request.errorData?.messages[0];
+  }, [request.errorData]);
+  const errorHandling = useMemo<JSX.Element | undefined>(() => {
+    if (errorText) {
+      return (
+        <AuthenticationAlert
+          type="error"
+          message={errorText}
+          className="authentication-alert-error"
+        />
+      );
+    }
+  }, [errorText]);
   return (
     <section className="new-forget-password--otp">
       <div className="new-forget-password--otp__edit">
@@ -76,7 +99,7 @@ const ForgetPasswordEnterOTP = () => {
       </div>
       <DividerLine />
       <div className="new-forget-password--otp__form">
-      {errorHandling}
+        {errorHandling}
 
         <Controller
           name="otp"

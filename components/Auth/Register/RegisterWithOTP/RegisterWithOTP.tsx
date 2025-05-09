@@ -4,7 +4,7 @@ import AuthCountdownTimer from "@/components/Shared/layouts/AuthLayout/AuthCount
 import AuthEditPhoneNumberOrEmail from "@/components/Shared/layouts/AuthLayout/AuthEditPhoneNumberOrEmail/AuthEditPhoneNumberOrEmail";
 import AuthSubHeader from "@/components/Shared/layouts/AuthLayout/AuthSubHeader/AuthSubHeader";
 import AuthenticationPassCodeInput from "@/components/Shared/PassCodeInput/AuthenticationPassCodeInput/AuthenticationPassCodeInput";
-import React, { FC, useMemo } from "react";
+import React, { FC, JSX, useMemo } from "react";
 import {
   IRegisterWithOTPForm,
   RegisterWithOTPSchemaValidation,
@@ -17,7 +17,7 @@ import { URL } from "@/constant/url";
 import useLink from "@/hook/use-link";
 import useRequest from "@/hook/use-request";
 import { IList } from "@/@types/Response/list";
-import { IVerifyOtpDataResponse } from "@/@types/Response/refactor/verify-otp";
+import { IVerifyOtpDataResponse } from "@/@types/response/refactor/verify-otp";
 import { API } from "@/constant/api";
 import RequestInstanceNames from "@/utils/request/types/request-instances.enum";
 import AuthenticationAlert from "@/components/Shared/Alert/AuthenticationAlert/AuthenticationAlert";
@@ -25,7 +25,9 @@ import AuthenticationAlert from "@/components/Shared/Alert/AuthenticationAlert/A
 const RegisterWithOTP: FC = (): JSX.Element => {
   const { redirect } = useLink();
   const router = useRouter();
-  const request = useRequest<IList<IVerifyOtpDataResponse>>({instanceName:RequestInstanceNames.NewAuth});
+  const request = useRequest<IList<IVerifyOtpDataResponse>>({
+    instanceName: RequestInstanceNames.NewAuth,
+  });
   const phoneNumber = router.query["phone-number"];
 
   const { control, handleSubmit } = useForm<IRegisterWithOTPSchemaValidation>({
@@ -34,30 +36,35 @@ const RegisterWithOTP: FC = (): JSX.Element => {
     },
     resolver: zodResolver(RegisterWithOTPSchemaValidation),
   });
-   const errorText =useMemo(() =>{
-      return request.errorData?.messages[0]
-    } ,[request.errorData])
-    const errorHandling = useMemo<JSX.Element | undefined>(()=>{
-      if (errorText) {
-        return (
-          <AuthenticationAlert  type="error" message={errorText} className="authentication-alert-error"/>
-        )
-      }
-  
-  
-    },[errorText])
-  const onSubmit =async (values: IRegisterWithOTPForm): Promise<void> => {
-    const reqBody ={
-      phone_number:phoneNumber,
-      otp:values.otp
+  const errorText = useMemo(() => {
+    return request.errorData?.messages[0];
+  }, [request.errorData]);
+  const errorHandling = useMemo<JSX.Element | undefined>(() => {
+    if (errorText) {
+      return (
+        <AuthenticationAlert
+          type="error"
+          message={errorText}
+          className="authentication-alert-error"
+        />
+      );
     }
-    const result =await request.post(API.verifyOtp,reqBody,{
-          headers:{
-            Authorization:`Bearer ${localStorage.getItem('forgetPasswordToken')}`
-          }
-        })
+  }, [errorText]);
+  const onSubmit = async (values: IRegisterWithOTPForm): Promise<void> => {
+    const reqBody = {
+      phone_number: phoneNumber,
+      otp: values.otp,
+    };
+    const result = await request.post(API.verifyOtp, reqBody, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("forgetPasswordToken")}`,
+      },
+    });
     if (result?.success) {
-      localStorage.setItem("forgetPasswordToken",result.data.auth.access_token)
+      localStorage.setItem(
+        "forgetPasswordToken",
+        result.data.auth.access_token
+      );
       redirect(URL.AuthRegisterPersonalInformation);
     }
   };
