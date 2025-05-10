@@ -2,6 +2,7 @@ import StoreProvider from "@/providers/StoreProvider";
 import "./globals.scss";
 import StartupProvider from "@/providers/StartupProvider";
 import RequestProvider from "@/providers/RequestProvider";
+import ToastProvider from "@/providers/ToastProvider";
 
 export default function RootLayout({
   children,
@@ -14,7 +15,9 @@ export default function RootLayout({
         <StoreProvider>
           <StartupProvider>
             <RequestProvider>
-              {children}
+              <ToastProvider>
+                {children}
+              </ToastProvider>
             </RequestProvider>
           </StartupProvider>
         </StoreProvider>

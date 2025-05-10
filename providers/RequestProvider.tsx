@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { NewAuthRequestInstance } from "@/utils/request/instances/new-auth-request-instance";
 import { CookieType } from "@/@types/cookie";
 import { getCookie } from "@/actions/cookie/get-cookie";
+import { Toast } from "@/utils/toast";
 
 interface RequestProviderProps {
   children?: ReactNode;
@@ -25,10 +26,7 @@ const RequestProvider: FC<RequestProviderProps> = ({
 
     if (response && response.data.messages) {
       response.data.messages.forEach((msg: string) =>
-        toast.success(msg, {
-          position: toast.POSITION.TOP_RIGHT,
-        })
-
+        Toast.success(msg)
       );
     }
 
@@ -42,15 +40,10 @@ const RequestProvider: FC<RequestProviderProps> = ({
 
     if (errorResponse && errorResponse.messages) {
       errorResponse.messages.forEach((msg: string) =>
-        toast.error(msg, {
-          position: toast.POSITION.TOP_RIGHT,
-        })
-
+        Toast.error(msg)
       );
     } else {
-      toast.error(" لطفا مجدد تلاش کنید", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
+      Toast.error(" لطفا مجدد تلاش کنید");
     }
 
     return Promise.reject(error);
