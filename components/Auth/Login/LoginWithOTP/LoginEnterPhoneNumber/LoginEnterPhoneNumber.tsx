@@ -7,7 +7,7 @@ import FormItem from "@/components/Shared/FormItem/FormItem";
 import AuthenticationInput from "@/components/Shared/Input/AuthenticationInput/AuthenticationInput";
 import AuthFooterLink from "@/components/Shared/layouts/AuthLayout/AuthFooterLink/AuthFooterLink";
 import AuthSubHeader from "@/components/Shared/layouts/AuthLayout/AuthSubHeader/AuthSubHeader";
-import React, { FC, JSX, useMemo, useState } from "react";
+import React, { FC, JSX, useMemo } from "react";
 import {
   ILoginEnterPhoneNumberForm,
   ILoginEnterPhoneNumberSchemaValidation,
@@ -29,7 +29,6 @@ const LoginEnterPhoneNumber: FC = (): JSX.Element => {
   const { redirect } = useLink();
   const { post, errorData } = useRequest<SendOtpSchemaResponse<ILoginBody>, ILoginSendOtpPhoneNumberRequest>({ instanceName: RequestInstanceNames.NewAuth })
 
-  // const [errorText , setErrorText] =useState<string | undefined>(errorData?.messages[0])
   const errorText = useMemo(() => {
     return errorData?.messages[0]
   }, [errorData])

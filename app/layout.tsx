@@ -1,6 +1,7 @@
 import StoreProvider from "@/providers/StoreProvider";
 import "./globals.scss";
 import StartupProvider from "@/providers/StartupProvider";
+import RequestProvider from "@/providers/RequestProvider";
 
 export default function RootLayout({
   children,
@@ -11,7 +12,11 @@ export default function RootLayout({
     <html lang="fa">
       <body>
         <StoreProvider>
-          <StartupProvider>{children}</StartupProvider>
+          <StartupProvider>
+            <RequestProvider>
+              {children}
+            </RequestProvider>
+          </StartupProvider>
         </StoreProvider>
       </body>
     </html>
